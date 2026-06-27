@@ -81,12 +81,50 @@
             color: white !important;
         }
 
-        /* --- БЛОК 1: HERO --- */
+        /* --- БЛОК 1: HERO с фоновым изображением --- */
         .hero {
-            background: linear-gradient(135deg, #0f2b4a 0%, #1a4a6e 100%);
+            position: relative;
             color: white;
             padding: 80px 0 60px 0;
             margin-bottom: 0;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Фоновое изображение */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 2;
+            filter: brightness(0.45) saturate(1.1);
+            transform: scale(1.02);
+            transition: transform 8s ease;
+        }
+
+        .hero:hover::before {
+            transform: scale(1.05);
+        }
+
+        /* Тёмный градиент поверх изображения для читаемости текста */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(15, 43, 74, 0.85) 0%, rgba(26, 74, 110, 0.70) 50%, rgba(15, 43, 74, 0.85) 100%);
+            z-index: 1;
         }
 
         .hero-content {
@@ -94,6 +132,9 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
+            position: relative;
+            z-index: 2;
+            width: 100%;
         }
 
         .hero h1 {
@@ -102,13 +143,15 @@
             max-width: 800px;
             margin-bottom: 20px;
             line-height: 1.2;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
         }
 
         .hero .subtitle {
             font-size: 1.3rem;
             max-width: 650px;
-            opacity: 0.9;
+            opacity: 0.95;
             margin-bottom: 40px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .hero .buttons {
@@ -161,7 +204,7 @@
             max-width: 700px;
             margin-top: 20px;
             padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .step-item {
@@ -169,7 +212,7 @@
             flex-direction: column;
             align-items: center;
             font-size: 0.9rem;
-            opacity: 0.8;
+            opacity: 0.9;
         }
 
         .step-item .icon {
@@ -184,6 +227,8 @@
             margin-top: -30px;
             border-radius: 30px 30px 0 0;
             box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 3;
         }
 
         .calculator-block h2 {
@@ -875,6 +920,10 @@
             .hero h1 {
                 font-size: 2.5rem;
             }
+            .hero {
+                min-height: 500px;
+                padding: 60px 0 40px;
+            }
         }
 
         @media (max-width: 700px) {
@@ -888,6 +937,10 @@
             }
             .hero h1 {
                 font-size: 2rem;
+            }
+            .hero {
+                min-height: 450px;
+                padding: 50px 0 30px;
             }
             .hero-steps {
                 flex-wrap: wrap;
@@ -916,6 +969,25 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+            .hero {
+                min-height: 400px;
+                padding: 40px 0 20px;
+            }
+            .hero-steps .step-item {
+                font-size: 0.75rem;
+            }
+            .hero-steps .step-item .icon {
+                font-size: 1.4rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -933,14 +1005,13 @@
     </div>
 </header>
 
-<!-- БЛОК 1: HERO -->
+<!-- БЛОК 1: HERO с фоновым изображением -->
 <section class="hero">
     <div class="container hero-content">
         <h1>Постройте дом мечты в Казани с фиксированной ценой</h1>
         <p class="subtitle">Онлайн-камера на стройке, поэтапная оплата и гарантия 5 лет. Рассчитайте стоимость за 1 минуту.</p>
         <div class="buttons">
             <a href="#calculator" class="btn btn-primary">Рассчитать стоимость</a>
-<!--            <a href="#portfolio" class="btn btn-secondary">Смотреть проекты</a>-->
         </div>
         <div class="hero-steps">
             <div class="step-item"><span class="icon">💡</span> Идея</div>
@@ -1050,6 +1121,40 @@
     </div>
 </section>
 
+<!-- БЛОК 4: ПРОЦЕСС -->
+<section id="process" class="process">
+    <div class="container">
+        <h2>Как мы строим</h2>
+        <p class="subtitle">Прозрачный процесс от идеи до заселения</p>
+        <div class="timeline">
+            <div class="timeline-item active">
+                <div class="icon">📋</div>
+                <div class="label">Консультация</div>
+                <div class="desc">Обсуждаем проект и бюджет</div>
+            </div>
+            <div class="timeline-item">
+                <div class="icon">📐</div>
+                <div class="label">Проектирование</div>
+                <div class="desc">Разрабатываем индивидуальный проект</div>
+            </div>
+            <div class="timeline-item">
+                <div class="icon">📊</div>
+                <div class="label">Смета</div>
+                <div class="desc">Фиксируем цену в договоре</div>
+            </div>
+            <div class="timeline-item">
+                <div class="icon">🏗️</div>
+                <div class="label">Строительство</div>
+                <div class="desc">Строим с онлайн-камерой</div>
+            </div>
+            <div class="timeline-item">
+                <div class="icon">🔑</div>
+                <div class="label">Сдача</div>
+                <div class="desc">Передаём ключи и дарим сертификат</div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- БЛОК 5: ДОКАЗАТЕЛЬСТВА -->
 <section class="proofs">
