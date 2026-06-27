@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Строй Дом | Строительство домов под ключ в Казани</title>
-    <!-- Подключение шрифта для современного вида -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
@@ -29,7 +28,7 @@
             padding: 0 20px;
         }
 
-        /* --- ШАПКА (MENU) --- */
+        /* --- ШАПКА --- */
         .header {
             background-color: #ffffff;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -81,19 +80,17 @@
             color: white !important;
         }
 
-        /* --- БЛОК 1: HERO с фоновым изображением --- */
+        /* --- HERO --- */
         .hero {
             position: relative;
             color: white;
             padding: 80px 0 60px 0;
-            margin-bottom: 0;
             min-height: 600px;
             display: flex;
             align-items: center;
             overflow: hidden;
         }
 
-        /* Фоновое изображение */
         .hero::before {
             content: '';
             position: absolute;
@@ -115,7 +112,6 @@
             transform: scale(1.05);
         }
 
-        /* Тёмный градиент поверх изображения для читаемости текста */
         .hero::after {
             content: '';
             position: absolute;
@@ -197,6 +193,18 @@
             border-color: white;
         }
 
+        .btn-outline-dark {
+            border-color: #c53b2b;
+            color: #c53b2b;
+            background: transparent;
+        }
+
+        .btn-outline-dark:hover {
+            background: #c53b2b;
+            color: white;
+            transform: translateY(-3px);
+        }
+
         .hero-steps {
             display: flex;
             justify-content: space-between;
@@ -220,131 +228,7 @@
             margin-bottom: 5px;
         }
 
-        /* --- БЛОК 2: КАЛЬКУЛЯТОР --- */
-        .calculator-block {
-            background-color: white;
-            padding: 80px 0;
-            margin-top: -30px;
-            border-radius: 30px 30px 0 0;
-            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.05);
-            position: relative;
-            z-index: 3;
-        }
-
-        .calculator-block h2 {
-            text-align: center;
-            font-size: 2.4rem;
-            color: #0f2b4a;
-            margin-bottom: 10px;
-        }
-
-        .calculator-block .subtitle {
-            text-align: center;
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 40px;
-        }
-
-        .calculator-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
-            background: #f8fafc;
-            padding: 40px;
-            border-radius: 20px;
-        }
-
-        .calc-params {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .param-group label {
-            font-weight: 600;
-            display: block;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-            color: #0f2b4a;
-        }
-
-        .options {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .option-btn {
-            padding: 10px 20px;
-            background-color: white;
-            border: 2px solid #e2e8f0;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: all 0.2s;
-            font-size: 0.9rem;
-        }
-
-        .option-btn:hover {
-            border-color: #c53b2b;
-            color: #c53b2b;
-        }
-
-        .option-btn.active {
-            background-color: #c53b2b;
-            border-color: #c53b2b;
-            color: white;
-        }
-
-        .range-slider {
-            width: 100%;
-            margin-top: 5px;
-            accent-color: #c53b2b;
-        }
-
-        .range-value {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #0f2b4a;
-            margin-left: 10px;
-        }
-
-        .calc-result {
-            background: white;
-            border-radius: 16px;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            border: 1px solid #e2e8f0;
-        }
-
-        .calc-result .price-label {
-            font-size: 0.9rem;
-            color: #555;
-        }
-
-        .calc-result .price {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #0f2b4a;
-            margin: 10px 0 15px;
-        }
-
-        .calc-result .note {
-            font-size: 0.8rem;
-            color: #777;
-            margin-bottom: 25px;
-        }
-
-        .calc-result .btn {
-            width: 100%;
-            text-align: center;
-        }
-
-        /* --- БЛОК 3: ПОРТФОЛИО --- */
+        /* --- ПОРТФОЛИО --- */
         .portfolio {
             padding: 80px 0;
             background-color: #ffffff;
@@ -365,7 +249,7 @@
 
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
@@ -383,8 +267,6 @@
 
         .project-card .image {
             height: 220px;
-            background-color: #cbd5e1;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200"><rect width="400" height="200" fill="%23e2e8f0"/><text x="50" y="120" font-family="Inter" font-size="18" fill="%2394a3b8">Фото дома</text></svg>');
             background-size: cover;
             background-position: center;
         }
@@ -424,6 +306,7 @@
             font-weight: 600;
             text-decoration: none;
             font-size: 0.9rem;
+            cursor: pointer;
         }
 
         .project-card .info .actions a:hover {
@@ -435,558 +318,255 @@
             margin-top: 40px;
         }
 
-        /* --- БЛОК 4: ПРОЦЕСС --- */
-        .process {
-            background-color: #f8fafc;
-            padding: 80px 0;
-        }
-
-        .process h2 {
-            text-align: center;
-            font-size: 2.4rem;
-            color: #0f2b4a;
-            margin-bottom: 15px;
-        }
-
-        .process .subtitle {
-            text-align: center;
-            color: #555;
-            margin-bottom: 50px;
-        }
-
-        .timeline {
-            display: flex;
-            justify-content: space-between;
-            position: relative;
-            flex-wrap: wrap;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 30px;
-            left: 10%;
-            right: 10%;
-            height: 4px;
-            background: #e2e8f0;
-            z-index: 1;
-        }
-
-        .timeline-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 14%;
-            position: relative;
-            z-index: 2;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .timeline-item:hover {
-            transform: scale(1.05);
-        }
-
-        .timeline-item .icon {
-            background: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            border: 3px solid #c53b2b;
-            margin-bottom: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .timeline-item .label {
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-align: center;
-        }
-
-        .timeline-item .desc {
-            font-size: 0.75rem;
-            color: #555;
-            text-align: center;
+        /* --- МОДАЛЬНОЕ ОКНО (страница проекта) --- */
+        .modal-overlay {
             display: none;
-        }
-
-        .timeline-item.active .desc {
-            display: block;
-            margin-top: 5px;
-        }
-
-        /* --- БЛОК 5: ДОКАЗАТЕЛЬСТВА --- */
-        .proofs {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .proofs h2 {
-            text-align: center;
-            font-size: 2.4rem;
-            color: #0f2b4a;
-            margin-bottom: 15px;
-        }
-
-        .proofs-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .proof-item {
-            background: #f8fafc;
-            padding: 30px;
-            border-radius: 16px;
-            text-align: center;
-        }
-
-        .proof-item .icon {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .proof-item h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .proof-item p {
-            color: #555;
-            font-size: 0.95rem;
-        }
-
-        .proof-item a {
-            color: #c53b2b;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .proof-item a:hover {
-            text-decoration: underline;
-        }
-
-        /* --- БЛОК 6: ВИДЕО-FAQ --- */
-        .video-faq {
-            background-color: #f8fafc;
-            padding: 80px 0;
-        }
-
-        .video-faq h2 {
-            text-align: center;
-            font-size: 2.4rem;
-            color: #0f2b4a;
-            margin-bottom: 15px;
-        }
-
-        .faq-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .faq-item {
-            background: white;
-            border-radius: 16px;
-            padding: 25px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.03);
-        }
-
-        .faq-item .video-placeholder {
-            background: #cbd5e1;
-            height: 140px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 1000;
             justify-content: center;
-            color: #475569;
-            font-weight: 500;
-            margin-bottom: 15px;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 150" width="400" height="150"><rect width="400" height="150" fill="%23e2e8f0"/><text x="120" y="80" font-family="Inter" font-size="18" fill="%2394a3b8">Видео-ответ</text></svg>');
+            align-items: center;
+            padding: 20px;
+            overflow-y: auto;
         }
 
-        .faq-item h4 {
-            margin-bottom: 8px;
-            color: #0f2b4a;
+        .modal-overlay.active {
+            display: flex;
         }
 
-        .faq-item p {
-            color: #555;
-            font-size: 0.95rem;
-        }
-
-        /* --- БЛОК 7: КОМАНДА --- */
-        .team {
-            padding: 80px 0;
+        .modal {
             background: white;
+            border-radius: 24px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 95vh;
+            overflow-y: auto;
+            padding: 40px;
+            position: relative;
+            animation: modalSlide 0.4s ease;
         }
 
-        .team h2 {
-            text-align: center;
-            font-size: 2.4rem;
-            color: #0f2b4a;
-            margin-bottom: 15px;
+        @keyframes modalSlide {
+            from { opacity: 0; transform: translateY(40px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .team-card {
-            text-align: center;
-            background: #f8fafc;
-            padding: 25px;
-            border-radius: 16px;
-        }
-
-        .team-card .photo {
-            width: 100px;
-            height: 100px;
+        .modal-close {
+            position: sticky;
+            top: 0;
+            float: right;
+            background: #f1f5f9;
+            border: none;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
-            background-color: #cbd5e1;
-            margin: 0 auto 15px;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><circle cx="50" cy="50" r="50" fill="%23e2e8f0"/><circle cx="50" cy="35" r="20" fill="%2394a3b8"/><rect x="25" y="60" width="50" height="30" rx="10" fill="%2394a3b8"/></svg>');
-        }
-
-        .team-card h4 {
-            font-size: 1.1rem;
-        }
-
-        .team-card .position {
-            color: #c53b2b;
-            font-weight: 500;
-            font-size: 0.9rem;
-            margin: 5px 0 10px;
-        }
-
-        .team-card p {
-            font-size: 0.9rem;
-            color: #555;
-        }
-
-        /* --- БЛОК 8: ГАРАНТИИ --- */
-        .guarantees {
-            background-color: #0f2b4a;
-            color: white;
-            padding: 80px 0;
-        }
-
-        .guarantees h2 {
-            text-align: center;
-            font-size: 2.4rem;
-            margin-bottom: 15px;
-        }
-
-        .guarantees-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .guarantee-item {
-            text-align: center;
-        }
-
-        .guarantee-item .icon {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-        }
-
-        .guarantee-item h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-
-        .guarantee-item p {
-            opacity: 0.8;
-            font-size: 0.9rem;
-        }
-
-        .guarantees .bottom-text {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 1.1rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 30px;
-        }
-
-        .guarantees .bottom-text a {
-            color: #c53b2b;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        /* --- БЛОК 9: ЦЕНЫ --- */
-        .prices {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .prices h2 {
-            text-align: center;
-            font-size: 2.4rem;
-            color: #0f2b4a;
-            margin-bottom: 15px;
-        }
-
-        .price-cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .price-card {
-            background: #f8fafc;
-            border-radius: 16px;
-            padding: 30px;
-            text-align: center;
-            border: 2px solid transparent;
+            font-size: 1.5rem;
+            cursor: pointer;
             transition: all 0.3s ease;
-        }
-
-        .price-card:hover {
-            border-color: #c53b2b;
-            transform: translateY(-5px);
-        }
-
-        .price-card .icon {
-            font-size: 2.5rem;
-        }
-
-        .price-card h3 {
-            font-size: 1.3rem;
-            margin: 10px 0;
-        }
-
-        .price-card .price {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #0f2b4a;
-            margin: 15px 0;
-        }
-
-        .price-card .btn {
-            padding: 12px 30px;
-            font-size: 0.9rem;
-        }
-
-        /* --- БЛОК 10: КОНТАКТЫ --- */
-        .contacts {
-            background-color: #f8fafc;
-            padding: 80px 0;
-        }
-
-        .contacts h2 {
-            text-align: center;
-            font-size: 2.4rem;
-            color: #0f2b4a;
-            margin-bottom: 15px;
-        }
-
-        .contacts-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-top: 40px;
-        }
-
-        .contacts-info {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 1.1rem;
-        }
-
-        .contact-item .icon {
-            font-size: 1.8rem;
-            width: 40px;
-        }
-
-        .contact-item a {
-            color: #0f2b4a;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .contact-item a:hover {
-            color: #c53b2b;
-        }
-
-        .map-placeholder {
-            background: #cbd5e1;
-            height: 300px;
-            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #475569;
-            font-weight: 500;
+            z-index: 10;
         }
 
-        .callback-form {
-            margin-top: 20px;
-            background: white;
-            padding: 30px;
-            border-radius: 16px;
-        }
-
-        .callback-form h3 {
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-        }
-
-        .callback-form input {
-            width: 100%;
-            padding: 14px 20px;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            font-size: 1rem;
-        }
-
-        .callback-form .btn {
-            width: 100%;
-            text-align: center;
-            font-size: 1rem;
-            padding: 14px;
-        }
-
-        /* --- ПОДВАЛ --- */
-        .footer {
-            background-color: #0f2b4a;
-            color: rgba(255, 255, 255, 0.7);
-            padding: 40px 0;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .footer a {
+        .modal-close:hover {
+            background: #c53b2b;
             color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 0.9rem;
         }
 
-        .footer a:hover {
+        .modal .main-image {
+            width: 100%;
+            height: 350px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 16px;
+            margin-top: -10px;
+        }
+
+        .modal .project-title {
+            font-size: 2rem;
+            color: #0f2b4a;
+            margin: 20px 0 10px;
+        }
+
+        .modal .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 15px 0;
+            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 20px;
+        }
+
+        .modal .project-meta .tag {
+            background: #f1f5f9;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #0f2b4a;
+        }
+
+        .modal .project-meta .tag strong {
             color: #c53b2b;
         }
 
-        .footer .copy {
-            margin-top: 20px;
-            font-size: 0.8rem;
+        .modal .project-description {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 25px;
         }
+
+        .modal .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0 30px;
+        }
+
+        .modal .project-gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .modal .project-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 16px;
+            margin: 20px 0 30px;
+        }
+
+        .modal .project-features .feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+
+        .modal .project-features .feature .icon {
+            font-size: 1.3rem;
+        }
+
+        .modal .cta-section {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        /* --- ПРОЧИЕ СЕКЦИИ (кратко) --- */
+        .proofs { padding: 80px 0; background: white; }
+        .proofs h2 { text-align: center; font-size: 2.4rem; color: #0f2b4a; margin-bottom: 15px; }
+        .proofs .subtitle { text-align: center; color: #555; margin-bottom: 40px; }
+        .proofs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+        .proof-item { background: #f8fafc; padding: 30px; border-radius: 16px; text-align: center; }
+        .proof-item .icon { font-size: 2.5rem; margin-bottom: 10px; }
+        .proof-item h3 { font-size: 1.2rem; margin-bottom: 10px; }
+        .proof-item p { color: #555; font-size: 0.95rem; }
+        .proof-item a { color: #c53b2b; font-weight: 600; text-decoration: none; }
+
+        .video-faq { background-color: #f8fafc; padding: 80px 0; }
+        .video-faq h2 { text-align: center; font-size: 2.4rem; color: #0f2b4a; margin-bottom: 15px; }
+        .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+        .faq-item { background: white; border-radius: 16px; padding: 25px; box-shadow: 0 2px 15px rgba(0,0,0,0.03); }
+        .faq-item .video-placeholder { background: #cbd5e1; height: 140px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #475569; font-weight: 500; margin-bottom: 15px; }
+        .faq-item h4 { margin-bottom: 8px; color: #0f2b4a; }
+        .faq-item p { color: #555; font-size: 0.95rem; }
+
+        .team { padding: 80px 0; background: white; }
+        .team h2 { text-align: center; font-size: 2.4rem; color: #0f2b4a; margin-bottom: 15px; }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; margin-top: 40px; }
+        .team-card { text-align: center; background: #f8fafc; padding: 25px; border-radius: 16px; }
+        .team-card .photo { width: 100px; height: 100px; border-radius: 50%; background-color: #cbd5e1; margin: 0 auto 15px; }
+        .team-card h4 { font-size: 1.1rem; }
+        .team-card .position { color: #c53b2b; font-weight: 500; font-size: 0.9rem; margin: 5px 0 10px; }
+        .team-card p { font-size: 0.9rem; color: #555; }
+
+        .guarantees { background-color: #0f2b4a; color: white; padding: 80px 0; }
+        .guarantees h2 { text-align: center; font-size: 2.4rem; margin-bottom: 15px; }
+        .guarantees-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 40px; }
+        .guarantee-item { text-align: center; }
+        .guarantee-item .icon { font-size: 2.8rem; margin-bottom: 10px; }
+        .guarantee-item h4 { font-size: 1.1rem; margin-bottom: 5px; }
+        .guarantee-item p { opacity: 0.8; font-size: 0.9rem; }
+        .guarantees .bottom-text { text-align: center; margin-top: 40px; font-size: 1.1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; }
+        .guarantees .bottom-text a { color: #c53b2b; font-weight: 600; text-decoration: none; }
+
+        .prices { padding: 80px 0; background: white; }
+        .prices h2 { text-align: center; font-size: 2.4rem; color: #0f2b4a; margin-bottom: 15px; }
+        .price-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+        .price-card { background: #f8fafc; border-radius: 16px; padding: 30px; text-align: center; border: 2px solid transparent; transition: all 0.3s ease; }
+        .price-card:hover { border-color: #c53b2b; transform: translateY(-5px); }
+        .price-card .icon { font-size: 2.5rem; }
+        .price-card h3 { font-size: 1.3rem; margin: 10px 0; }
+        .price-card .price { font-size: 2rem; font-weight: 700; color: #0f2b4a; margin: 15px 0; }
+        .price-card .btn { padding: 12px 30px; font-size: 0.9rem; }
+
+        .contacts { background-color: #f8fafc; padding: 80px 0; }
+        .contacts h2 { text-align: center; font-size: 2.4rem; color: #0f2b4a; margin-bottom: 15px; }
+        .contacts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 40px; }
+        .contacts-info { display: flex; flex-direction: column; gap: 20px; }
+        .contact-item { display: flex; align-items: center; gap: 15px; font-size: 1.1rem; }
+        .contact-item .icon { font-size: 1.8rem; width: 40px; }
+        .contact-item a { color: #0f2b4a; text-decoration: none; font-weight: 500; }
+        .contact-item a:hover { color: #c53b2b; }
+        .map-placeholder { background: #cbd5e1; height: 300px; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #475569; font-weight: 500; }
+        .callback-form { margin-top: 20px; background: white; padding: 30px; border-radius: 16px; }
+        .callback-form h3 { margin-bottom: 20px; font-size: 1.2rem; }
+        .callback-form input { width: 100%; padding: 14px 20px; border: 1px solid #e2e8f0; border-radius: 10px; margin-bottom: 15px; font-size: 1rem; }
+        .callback-form .btn { width: 100%; text-align: center; font-size: 1rem; padding: 14px; }
+
+        .footer { background-color: #0f2b4a; color: rgba(255, 255, 255, 0.7); padding: 40px 0; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        .footer a { color: white; text-decoration: none; margin: 0 15px; font-size: 0.9rem; }
+        .footer a:hover { color: #c53b2b; }
+        .footer .copy { margin-top: 20px; font-size: 0.8rem; }
 
         /* --- АДАПТИВНОСТЬ --- */
         @media (max-width: 992px) {
-            .calculator-grid {
-                grid-template-columns: 1fr;
-            }
-            .guarantees-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .price-cards {
-                grid-template-columns: 1fr 1fr;
-            }
-            .timeline::before {
-                display: none;
-            }
-            .timeline-item {
-                width: 30%;
-                margin-bottom: 20px;
-            }
-            .proofs-grid {
-                grid-template-columns: 1fr;
-            }
-            .contacts-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            .hero {
-                min-height: 500px;
-                padding: 60px 0 40px;
-            }
+            .hero h1 { font-size: 2.5rem; }
+            .hero { min-height: 500px; }
+            .guarantees-grid { grid-template-columns: repeat(2, 1fr); }
+            .price-cards { grid-template-columns: 1fr 1fr; }
+            .proofs-grid { grid-template-columns: 1fr; }
+            .contacts-grid { grid-template-columns: 1fr; }
+            .modal .project-gallery { grid-template-columns: repeat(2, 1fr); }
+            .modal .project-features { grid-template-columns: 1fr; }
         }
 
-        @media (max-width: 700px) {
-            .nav a {
-                margin-left: 15px;
-                font-size: 0.8rem;
-            }
-            .nav .contact-phone {
-                margin-left: 15px;
-                padding: 5px 15px;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero {
-                min-height: 450px;
-                padding: 50px 0 30px;
-            }
-            .hero-steps {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
-            .step-item {
-                width: 30%;
-            }
-            .price-cards {
-                grid-template-columns: 1fr;
-            }
-            .guarantees-grid {
-                grid-template-columns: 1fr;
-            }
-            .timeline-item {
-                width: 45%;
-            }
-            .calculator-block {
-                padding: 40px 0;
-            }
-            .calc-result .price {
-                font-size: 2.2rem;
-            }
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
+        @media (max-width: 768px) {
+            .nav a { margin-left: 15px; font-size: 0.8rem; }
+            .nav .contact-phone { margin-left: 15px; padding: 5px 15px; }
+            .hero h1 { font-size: 2rem; }
+            .hero { min-height: 450px; padding: 50px 0 30px; }
+            .hero-steps { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .step-item { width: 30%; }
+            .price-cards { grid-template-columns: 1fr; }
+            .guarantees-grid { grid-template-columns: 1fr; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .modal { padding: 20px; }
+            .modal .main-image { height: 220px; }
+            .modal .project-title { font-size: 1.5rem; }
+            .modal .project-gallery { grid-template-columns: 1fr; }
+            .modal .project-meta { flex-direction: column; gap: 10px; }
+            .modal .project-features { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.6rem;
-            }
-            .hero .subtitle {
-                font-size: 1rem;
-            }
-            .hero {
-                min-height: 400px;
-                padding: 40px 0 20px;
-            }
-            .hero-steps .step-item {
-                font-size: 0.75rem;
-            }
-            .hero-steps .step-item .icon {
-                font-size: 1.4rem;
-            }
+            .hero h1 { font-size: 1.6rem; }
+            .hero { min-height: 400px; padding: 40px 0 20px; }
+            .hero-steps .step-item { font-size: 0.75rem; }
+            .hero-steps .step-item .icon { font-size: 1.4rem; }
+            .modal .main-image { height: 180px; }
         }
     </style>
 </head>
@@ -998,20 +578,19 @@
         <div class="logo">Строй<span>Дом</span></div>
         <nav class="nav">
             <a href="#portfolio">Проекты</a>
-            <a href="#process">Процесс</a>
             <a href="#prices">Цены</a>
             <a href="#contacts" class="contact-phone">+7 (843) 212-62-19</a>
         </nav>
     </div>
 </header>
 
-<!-- БЛОК 1: HERO с фоновым изображением -->
+<!-- HERO -->
 <section class="hero">
     <div class="container hero-content">
         <h1>Постройте дом мечты в Казани с фиксированной ценой</h1>
         <p class="subtitle">Онлайн-камера на стройке, поэтапная оплата и гарантия 5 лет. Рассчитайте стоимость за 1 минуту.</p>
         <div class="buttons">
-            <a href="#calculator" class="btn btn-primary">Рассчитать стоимость</a>
+            <a href="#portfolio" class="btn btn-primary">Смотреть проекты</a>
         </div>
         <div class="hero-steps">
             <div class="step-item"><span class="icon">💡</span> Идея</div>
@@ -1023,97 +602,97 @@
     </div>
 </section>
 
-<!-- БЛОК 2: КАЛЬКУЛЯТОР -->
-<section id="calculator" class="calculator-block">
-    <div class="container">
-        <h2>Калькулятор стоимости дома</h2>
-        <p class="subtitle">Узнайте цену вашего дома за 1 минуту. Цифры приближены к реальной смете.</p>
-        <div class="calculator-grid">
-            <div class="calc-params">
-                <div class="param-group">
-                    <label>Шаг 1. Материал стен</label>
-                    <div class="options" id="materialOptions">
-                        <button class="option-btn active" data-value="gas">Газобетон</button>
-                        <button class="option-btn" data-value="brick">Кирпич</button>
-                        <button class="option-btn" data-value="wood">Дерево</button>
-                        <button class="option-btn" data-value="frame">Каркас</button>
-                    </div>
-                </div>
-                <div class="param-group">
-                    <label>Шаг 2. Площадь дома (м²)</label>
-                    <input type="range" min="60" max="300" step="10" value="120" class="range-slider" id="areaSlider">
-                    <span class="range-value" id="areaValue">120 м²</span>
-                </div>
-                <div class="param-group">
-                    <label>Шаг 3. Уровень отделки</label>
-                    <div class="options" id="finishOptions">
-                        <button class="option-btn" data-value="rough">Черновая</button>
-                        <button class="option-btn active" data-value="clean">Чистовая</button>
-                        <button class="option-btn" data-value="premium">Премиум</button>
-                    </div>
-                </div>
-                <div class="param-group">
-                    <label>Шаг 4. Этажность</label>
-                    <div class="options" id="floorsOptions">
-                        <button class="option-btn active" data-value="1">1 этаж</button>
-                        <button class="option-btn" data-value="2">2 этажа</button>
-                        <button class="option-btn" data-value="3">3 этажа + мансарда</button>
-                    </div>
-                </div>
-            </div>
-            <div class="calc-result">
-                <span class="price-label">Ваша приблизительная стоимость:</span>
-                <div class="price" id="totalPrice">4 200 000 ₽</div>
-                <p class="note">⚠️ Ориентир. Точная смета после расчёта на месте.</p>
-                <a href="#" class="btn btn-primary" id="calcCta">📋 Получить точную смету</a>
-                <p style="font-size:0.8rem; color:#777; margin-top:15px;">*При заказе цена в договоре не меняется</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- БЛОК 3: ПОРТФОЛИО -->
+<!-- ПОРТФОЛИО -->
 <section id="portfolio" class="portfolio">
     <div class="container">
         <h2>Реализованные проекты</h2>
         <p class="subtitle">Каждый дом — это история семьи. Смотрите и вдохновляйтесь.</p>
         <div class="portfolio-grid">
-            <div class="project-card">
-                <div class="image" style="background-image: url('head.jpeg');"></div>
+
+            <!-- Проект 1 -->
+            <div class="project-card" data-project="1">
+                <div class="image" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80');"></div>
                 <div class="info">
                     <h3>Дом в ЖК «Солнечный»</h3>
                     <div class="details">145 м² | Газобетон | Чистовая отделка | 5 месяцев</div>
                     <div class="review">«Приятно удивила чистота на стройке и соблюдение сроков»</div>
                     <div class="actions">
-                        <a href="#">Смотреть проект →</a>
+                        <a class="project-link" data-project="1">Смотреть проект →</a>
                         <a href="#">🎥 Видео-обзор</a>
                     </div>
                 </div>
             </div>
-            <div class="project-card">
-                <div class="image" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 220%22><rect width=%22400%22 height=%22220%22 fill=%22%23e2e8f0%22/><text x=%2280%22 y=%22120%22 font-family=%22Inter%22 font-size=%2220%22 fill=%22%2394a3b8%22>Фото дома 98 м²</text></svg>');"></div>
+
+            <!-- Проект 2 -->
+            <div class="project-card" data-project="2">
+                <div class="image" style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80');"></div>
                 <div class="info">
                     <h3>Коттедж в пос. Залесный</h3>
                     <div class="details">98 м² | Кирпич | Премиум отделка | 6 месяцев</div>
                     <div class="review">«Сделали даже лучше, чем мы представляли. Спасибо команде!»</div>
                     <div class="actions">
-                        <a href="#">Смотреть проект →</a>
+                        <a class="project-link" data-project="2">Смотреть проект →</a>
                         <a href="#">🎥 Видео-обзор</a>
                     </div>
                 </div>
             </div>
-            <div class="project-card">
-                <div class="image" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 220%22><rect width=%22400%22 height=%22220%22 fill=%22%23e2e8f0%22/><text x=%2280%22 y=%22120%22 font-family=%22Inter%22 font-size=%2220%22 fill=%22%2394a3b8%22>Фото дома 210 м²</text></svg>');"></div>
+
+            <!-- Проект 3 -->
+            <div class="project-card" data-project="3">
+                <div class="image" style="background-image: url('https://images.unsplash.com/photo-1600573472591-ee6981cf35b3?w=800&q=80');"></div>
                 <div class="info">
                     <h3>Дом с мансардой в СНТ «Березка»</h3>
                     <div class="details">210 м² | Дерево | Чистовая отделка | 7 месяцев</div>
                     <div class="review">«Всё прозрачно, вовремя, без доплат. Рекомендуем!»</div>
                     <div class="actions">
-                        <a href="#">Смотреть проект →</a>
+                        <a class="project-link" data-project="3">Смотреть проект →</a>
                         <a href="#">🎥 Видео-обзор</a>
                     </div>
                 </div>
             </div>
+
+            <!-- Проект 4 -->
+            <div class="project-card" data-project="4">
+                <div class="image" style="background-image: url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80');"></div>
+                <div class="info">
+                    <h3>Скандинавский дом в «Зелёной долине»</h3>
+                    <div class="details">132 м² | Каркас | Чистовая отделка | 4 месяца</div>
+                    <div class="review">«Построили дом мечты! Отдельное спасибо за террасу»</div>
+                    <div class="actions">
+                        <a class="project-link" data-project="4">Смотреть проект →</a>
+                        <a href="#">🎥 Видео-обзор</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Проект 5 -->
+            <div class="project-card" data-project="5">
+                <div class="image" style="background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80');"></div>
+                <div class="info">
+                    <h3>Дом с бассейном в коттеджном посёлке</h3>
+                    <div class="details">280 м² | Кирпич | Премиум отделка | 10 месяцев</div>
+                    <div class="review">«Дом получился роскошным. Все пожелания учтены!»</div>
+                    <div class="actions">
+                        <a class="project-link" data-project="5">Смотреть проект →</a>
+                        <a href="#">🎥 Видео-обзор</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Проект 6 -->
+            <div class="project-card" data-project="6">
+                <div class="image" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80');"></div>
+                <div class="info">
+                    <h3>Таунхаус в центре Казани</h3>
+                    <div class="details">180 м² | Газобетон | Чистовая отделка | 8 месяцев</div>
+                    <div class="review">«Строили в стеснённых условиях, справились отлично»</div>
+                    <div class="actions">
+                        <a class="project-link" data-project="6">Смотреть проект →</a>
+                        <a href="#">🎥 Видео-обзор</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div class="center-btn">
             <a href="#" class="btn btn-primary">Смотреть все 117 проектов</a>
@@ -1121,42 +700,47 @@
     </div>
 </section>
 
-<!-- БЛОК 4: ПРОЦЕСС -->
-<section id="process" class="process">
-    <div class="container">
-        <h2>Как мы строим</h2>
-        <p class="subtitle">Прозрачный процесс от идеи до заселения</p>
-        <div class="timeline">
-            <div class="timeline-item active">
-                <div class="icon">📋</div>
-                <div class="label">Консультация</div>
-                <div class="desc">Обсуждаем проект и бюджет</div>
-            </div>
-            <div class="timeline-item">
-                <div class="icon">📐</div>
-                <div class="label">Проектирование</div>
-                <div class="desc">Разрабатываем индивидуальный проект</div>
-            </div>
-            <div class="timeline-item">
-                <div class="icon">📊</div>
-                <div class="label">Смета</div>
-                <div class="desc">Фиксируем цену в договоре</div>
-            </div>
-            <div class="timeline-item">
-                <div class="icon">🏗️</div>
-                <div class="label">Строительство</div>
-                <div class="desc">Строим с онлайн-камерой</div>
-            </div>
-            <div class="timeline-item">
-                <div class="icon">🔑</div>
-                <div class="label">Сдача</div>
-                <div class="desc">Передаём ключи и дарим сертификат</div>
-            </div>
+<!-- МОДАЛЬНОЕ ОКНО (страница проекта) -->
+<div class="modal-overlay" id="projectModal">
+    <div class="modal">
+        <button class="modal-close" id="modalClose">✕</button>
+
+        <div class="main-image" id="modalImage" style="background-image: url('');"></div>
+
+        <h2 class="project-title" id="modalTitle"></h2>
+
+        <div class="project-meta" id="modalMeta">
+            <span class="tag">📐 Площадь: <strong id="modalArea">—</strong></span>
+            <span class="tag">🧱 Материал: <strong id="modalMaterial">—</strong></span>
+            <span class="tag">🎨 Отделка: <strong id="modalFinish">—</strong></span>
+            <span class="tag">⏱️ Срок: <strong id="modalTime">—</strong></span>
+        </div>
+
+        <div class="project-description" id="modalDescription"></div>
+
+        <div class="project-gallery" id="modalGallery">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="Фото дома">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80" alt="Интерьер">
+            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=400&q=80" alt="Участок">
+        </div>
+
+        <div class="project-features" id="modalFeatures">
+            <div class="feature"><span class="icon">🏗️</span> Фундамент: <span id="featFoundation">—</span></div>
+            <div class="feature"><span class="icon">🧱</span> Стены: <span id="featWalls">—</span></div>
+            <div class="feature"><span class="icon">🏠</span> Перекрытия: <span id="featCeilings">—</span></div>
+            <div class="feature"><span class="icon">🪟</span> Окна: <span id="featWindows">—</span></div>
+            <div class="feature"><span class="icon">🔧</span> Инженерные сети: <span id="featUtilities">—</span></div>
+            <div class="feature"><span class="icon">📋</span> Гарантия: <span>5 лет</span></div>
+        </div>
+
+        <div class="cta-section">
+            <a href="#contacts" class="btn btn-primary">📞 Заказать такой же дом</a>
+            <a href="#" class="btn btn-outline-dark">📥 Скачать презентацию</a>
         </div>
     </div>
-</section>
+</div>
 
-<!-- БЛОК 5: ДОКАЗАТЕЛЬСТВА -->
+<!-- ДОКАЗАТЕЛЬСТВА -->
 <section class="proofs">
     <div class="container">
         <h2>Мы ничего не скрываем</h2>
@@ -1184,7 +768,7 @@
     </div>
 </section>
 
-<!-- БЛОК 6: ВИДЕО-FAQ -->
+<!-- ВИДЕО-FAQ -->
 <section class="video-faq">
     <div class="container">
         <h2>Отвечаем на неудобные вопросы</h2>
@@ -1207,37 +791,37 @@
             </div>
         </div>
         <div class="center-btn">
-            <a href="#" class="btn btn-secondary" style="border-color: #c53b2b; color: #c53b2b;">Задать свой вопрос</a>
+            <a href="#" class="btn btn-outline-dark">Задать свой вопрос</a>
         </div>
     </div>
 </section>
 
-<!-- БЛОК 7: КОМАНДА -->
+<!-- КОМАНДА -->
 <section class="team">
     <div class="container">
         <h2>Ваш дом ведёт команда профи</h2>
         <p class="subtitle">У каждого клиента — личный чат с прорабом и сметчиком.</p>
         <div class="team-grid">
             <div class="team-card">
-                <div class="photo"></div>
+                <div class="photo" style="background: #cbd5e1; border-radius: 50%;"></div>
                 <h4>Александр Михайлов</h4>
                 <div class="position">Главный прораб. Стаж 14 лет</div>
                 <p>«Лично проверяю каждый этап и отвечаю на звонки в любое время»</p>
             </div>
             <div class="team-card">
-                <div class="photo"></div>
+                <div class="photo" style="background: #cbd5e1; border-radius: 50%;"></div>
                 <h4>Екатерина Волкова</h4>
                 <div class="position">Архитектор. Стаж 10 лет</div>
                 <p>«Помогу адаптировать проект под ваш участок и бюджет»</p>
             </div>
             <div class="team-card">
-                <div class="photo"></div>
+                <div class="photo" style="background: #cbd5e1; border-radius: 50%;"></div>
                 <h4>Дмитрий Новиков</h4>
                 <div class="position">Сметчик. Стаж 8 лет</div>
                 <p>«Фиксирую цену в договоре так, чтобы она не менялась»</p>
             </div>
             <div class="team-card">
-                <div class="photo"></div>
+                <div class="photo" style="background: #cbd5e1; border-radius: 50%;"></div>
                 <h4>Игорь Смирнов</h4>
                 <div class="position">Директор. Стаж 12 лет</div>
                 <p>«Гарантирую выполнение всех обязательств по договору»</p>
@@ -1246,7 +830,7 @@
     </div>
 </section>
 
-<!-- БЛОК 8: ГАРАНТИИ -->
+<!-- ГАРАНТИИ -->
 <section class="guarantees">
     <div class="container">
         <h2>Как защищены ваши деньги</h2>
@@ -1278,7 +862,7 @@
     </div>
 </section>
 
-<!-- БЛОК 9: ЦЕНЫ -->
+<!-- ЦЕНЫ -->
 <section id="prices" class="prices">
     <div class="container">
         <h2>Цены на популярные проекты</h2>
@@ -1309,7 +893,7 @@
     </div>
 </section>
 
-<!-- БЛОК 10: КОНТАКТЫ -->
+<!-- КОНТАКТЫ -->
 <section id="contacts" class="contacts">
     <div class="container">
         <h2>Остались вопросы? Свяжитесь с нами</h2>
@@ -1352,11 +936,11 @@
 <footer class="footer">
     <div class="container">
         <div>
-            <a href="#">Портфолио</a>
+            <a href="#portfolio">Портфолио</a>
             <a href="#">Отзывы</a>
             <a href="#">Гарантии</a>
             <a href="#">Блог</a>
-            <a href="#">Контакты</a>
+            <a href="#contacts">Контакты</a>
         </div>
         <div class="copy">
             © 2026 Строй Дом. Строительство домов под ключ в Казани.
@@ -1365,95 +949,197 @@
 </footer>
 
 <script>
-    // === КАЛЬКУЛЯТОР ===
     document.addEventListener('DOMContentLoaded', function() {
-        // Базовые цены
-        const prices = {
-            gas: 35000,
-            brick: 40000,
-            wood: 42000,
-            frame: 31500
+
+        // === ДАННЫЕ ПРОЕКТОВ ===
+        const projects = {
+            1: {
+                title: 'Дом в ЖК «Солнечный»',
+                image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
+                area: '145 м²',
+                material: 'Газобетон',
+                finish: 'Чистовая',
+                time: '5 месяцев',
+                description: 'Современный двухэтажный дом в жилом комплексе «Солнечный». Просторная терраса, панорамные окна и продуманная планировка. Дом построен по индивидуальному проекту с учётом всех пожеланий заказчика. Просторная гостиная с камином, 4 спальни, большая кухня-столовая.',
+                features: {
+                    foundation: 'Монолитная плита',
+                    walls: 'Газобетон D500 + утепление',
+                    ceilings: 'Монолитные ж/б',
+                    windows: 'Двухкамерные стеклопакеты (Rehau)',
+                    utilities: 'Автономное отопление, водоснабжение'
+                }
+            },
+            2: {
+                title: 'Коттедж в пос. Залесный',
+                image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80',
+                area: '98 м²',
+                material: 'Кирпич',
+                finish: 'Премиум',
+                time: '6 месяцев',
+                description: 'Уютный одноэтажный кирпичный дом в экологически чистом районе. Классический английский стиль, качественная отделка из натуральных материалов. Идеальный вариант для постоянного проживания небольшой семьи. В доме 3 спальни, гостиная с выходом на террасу.',
+                features: {
+                    foundation: 'Ленточный глубокого заложения',
+                    walls: 'Кирпич керамический 2,5 кирпича',
+                    ceilings: 'Деревянные балки',
+                    windows: 'Деревянные евроокна',
+                    utilities: 'Газовое отопление, центральное водоснабжение'
+                }
+            },
+            3: {
+                title: 'Дом с мансардой в СНТ «Березка»',
+                image: 'https://images.unsplash.com/photo-1600573472591-ee6981cf35b3?w=800&q=80',
+                area: '210 м²',
+                material: 'Дерево (брус)',
+                finish: 'Чистовая',
+                time: '7 месяцев',
+                description: 'Двухэтажный деревянный дом с просторной мансардой. Натуральный брус создаёт уникальный микроклимат в помещениях. Дом расположен в лесном массиве, рядом с озером. Отличный выбор для тех, кто ценит экологичность и комфорт. 5 спален, большой зал, сауна.',
+                features: {
+                    foundation: 'Винтовые сваи',
+                    walls: 'Профилированный брус 200x200',
+                    ceilings: 'Деревянные перекрытия',
+                    windows: 'Двухкамерные, деревянные',
+                    utilities: 'Автономное газовое отопление, септик'
+                }
+            },
+            4: {
+                title: 'Скандинавский дом в «Зелёной долине»',
+                image: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80',
+                area: '132 м²',
+                material: 'Каркас',
+                finish: 'Чистовая',
+                time: '4 месяца',
+                description: 'Стильный скандинавский дом по финской технологии. Быстровозводимый каркасный дом с большими панорамными окнами. Терраса по всему периметру, выход в сад. Внутри — светлые тона, минимум перегородок, максимум воздуха. 3 спальни, кухня-гостиная, кабинет.',
+                features: {
+                    foundation: 'Утеплённая шведская плита (УШП)',
+                    walls: 'Каркас 150x150, утепление 200 мм',
+                    ceilings: 'Деревянные фермы',
+                    windows: 'Трёхкамерные стеклопакеты',
+                    utilities: 'Электрическое отопление, водоснабжение'
+                }
+            },
+            5: {
+                title: 'Дом с бассейном в коттеджном посёлке',
+                image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80',
+                area: '280 м²',
+                material: 'Кирпич',
+                finish: 'Премиум',
+                time: '10 месяцев',
+                description: 'Роскошный двухэтажный особняк с собственным бассейном и террасой. Классическая архитектура, качественные материалы и продуманная планировка — идеальный дом для большой семьи. Просторные гостиные, большая кухня-столовая, 6 спален, домашний кинотеатр, бассейн с подогревом.',
+                features: {
+                    foundation: 'Монолитная плита с цокольным этажом',
+                    walls: 'Кирпич облицовочный + газобетон',
+                    ceilings: 'Монолитные ж/б',
+                    windows: 'Алюминиевые с терморазрывом',
+                    utilities: 'Автономное газовое отопление, водоснабжение, бассейн'
+                }
+            },
+            6: {
+                title: 'Таунхаус в центре Казани',
+                image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
+                area: '180 м²',
+                material: 'Газобетон',
+                finish: 'Чистовая',
+                time: '8 месяцев',
+                description: 'Современный таунхаус в центральном районе Казани. Удобная планировка, два уровня, небольшая придомовая территория. Рядом — парк, школы, детские сады. Идеальный вариант для городской жизни с комфортом загородного дома. 4 спальни, просторная гостиная, 2 санузла, гардеробная.',
+                features: {
+                    foundation: 'Ленточный мелкого заложения',
+                    walls: 'Газобетон D600 + облицовочный кирпич',
+                    ceilings: 'Монолитные ж/б',
+                    windows: 'Двухкамерные стеклопакеты (Rehau)',
+                    utilities: 'Центральное отопление, водоснабжение, канализация'
+                }
+            }
         };
 
-        const finishCoef = {
-            rough: 0.8,
-            clean: 1.0,
-            premium: 1.3
-        };
+        // === ОТКРЫТИЕ МОДАЛЬНОГО ОКНА ===
+        const modal = document.getElementById('projectModal');
+        const modalClose = document.getElementById('modalClose');
 
-        const floorsCoef = {
-            1: 1.0,
-            2: 0.95,
-            3: 0.90
-        };
+        function openProject(projectId) {
+            const data = projects[projectId];
+            if (!data) return;
 
-        // Текущие значения
-        let currentMaterial = 'gas';
-        let currentArea = 120;
-        let currentFinish = 'clean';
-        let currentFloors = 1;
+            // Заполняем контент
+            document.getElementById('modalImage').style.backgroundImage = `url('${data.image}')`;
+            document.getElementById('modalTitle').textContent = data.title;
+            document.getElementById('modalArea').textContent = data.area;
+            document.getElementById('modalMaterial').textContent = data.material;
+            document.getElementById('modalFinish').textContent = data.finish;
+            document.getElementById('modalTime').textContent = data.time;
+            document.getElementById('modalDescription').textContent = data.description;
 
-        // Элементы DOM
-        const priceDisplay = document.getElementById('totalPrice');
-        const areaSlider = document.getElementById('areaSlider');
-        const areaValue = document.getElementById('areaValue');
+            // Особенности
+            document.getElementById('featFoundation').textContent = data.features.foundation;
+            document.getElementById('featWalls').textContent = data.features.walls;
+            document.getElementById('featCeilings').textContent = data.features.ceilings;
+            document.getElementById('featWindows').textContent = data.features.windows;
+            document.getElementById('featUtilities').textContent = data.features.utilities;
 
-        // Функция расчета и обновления
-        function updatePrice() {
-            const basePrice = prices[currentMaterial] * currentArea;
-            const finishPrice = basePrice * finishCoef[currentFinish];
-            const totalPrice = finishPrice * floorsCoef[currentFloors];
-            priceDisplay.textContent = Math.round(totalPrice / 1000) * 1000 + ' ₽';
+            // Галерея (разные фото для каждого проекта)
+            const gallery = document.getElementById('modalGallery');
+            const galleryImages = [
+                data.image,
+                'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80',
+                'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=400&q=80'
+            ];
+            gallery.innerHTML = galleryImages.map(img =>
+                `<img src="${img}" alt="Фото проекта ${data.title}">`
+            ).join('');
+
+            // Показываем модалку
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
 
-        // Обработчики для кнопок выбора материала
-        document.querySelectorAll('#materialOptions .option-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('#materialOptions .option-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                currentMaterial = this.dataset.value;
-                updatePrice();
+        // === ЗАКРЫТИЕ МОДАЛЬНОГО ОКНА ===
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        modalClose.addEventListener('click', closeModal);
+
+        // Закрытие по клику вне модального окна
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Закрытие по ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // === НАВЕШИВАЕМ ОБРАБОТЧИКИ НА ВСЕ ССЫЛКИ ===
+        document.querySelectorAll('.project-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const projectId = parseInt(this.dataset.project);
+                openProject(projectId);
             });
         });
 
-        // Обработчик для ползунка площади
-        areaSlider.addEventListener('input', function() {
-            currentArea = parseInt(this.value);
-            areaValue.textContent = currentArea + ' м²';
-            updatePrice();
-        });
-
-        // Обработчики для кнопок отделки
-        document.querySelectorAll('#finishOptions .option-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('#finishOptions .option-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                currentFinish = this.dataset.value;
-                updatePrice();
+        // Также на всю карточку (клик по карточке)
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Если клик был по ссылке внутри — не дублируем
+                if (e.target.closest('a')) return;
+                const projectId = parseInt(this.dataset.project);
+                openProject(projectId);
             });
         });
 
-        // Обработчики для кнопок этажности
-        document.querySelectorAll('#floorsOptions .option-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('#floorsOptions .option-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                currentFloors = parseInt(this.dataset.value);
-                updatePrice();
-            });
+        // === ПЛАВНЫЙ СКРОЛЛ К ПОРТФОЛИО ===
+        document.querySelector('.btn-primary[href="#portfolio"]')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector('#portfolio').scrollIntoView({ behavior: 'smooth' });
         });
 
-        // Первый расчет
-        updatePrice();
-
-        // === ТАЙМЛАЙН (ПРОЦЕСС) ===
-        const timelineItems = document.querySelectorAll('.timeline-item');
-        timelineItems.forEach(item => {
-            item.addEventListener('click', function() {
-                timelineItems.forEach(i => i.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
+        console.log('🚀 Сайт с проектами загружен!');
+        console.log('📊 Всего проектов: 6');
     });
 </script>
 
