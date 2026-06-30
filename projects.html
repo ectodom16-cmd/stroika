@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Проекты домов | Строй Дом — Казань</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <style>
+        /* --- БАЗОВЫЕ СТИЛИ (полностью скопированы с index.html) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a1a1a;
+            line-height: 1.6;
+            background-color: #f8fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- ШАПКА --- */
+        .header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0f2b4a;
+        }
+
+        .logo span {
+            color: #c53b2b;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #1a1a1a;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .nav a:hover {
+            color: #c53b2b;
+        }
+
+        .nav .contact-phone {
+            background-color: #0f2b4a;
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin-left: 30px;
+        }
+
+        .nav .contact-phone:hover {
+            background-color: #c53b2b;
+            color: white !important;
+        }
+
+        /* --- ГЕРОЙ (минимальный, под стать) --- */
+        .hero-mini {
+            background: linear-gradient(135deg, #0f2b4a 0%, #1a4a6e 100%);
+            color: white;
+            padding: 60px 0 50px;
+            text-align: center;
+        }
+
+        .hero-mini h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero-mini p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- СЕТКА ПРОЕКТОВ (расширенная) --- */
+        .projects-page {
+            padding: 60px 0 80px;
+            background: #ffffff;
+        }
+
+        .projects-page .subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: #f8fafc;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .project-card .image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .project-card .info {
+            padding: 20px;
+        }
+
+        .project-card .info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .project-card .info .details {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        .project-card .info .review {
+            font-style: italic;
+            color: #333;
+            border-left: 3px solid #c53b2b;
+            padding-left: 12px;
+            font-size: 0.95rem;
+        }
+
+        .project-card .info .actions {
+            margin-top: 15px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .project-card .info .actions a {
+            color: #c53b2b;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .project-card .info .actions a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- ПАГИНАЦИЯ (для вида "отдельная страница") --- */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .pagination a {
+            padding: 10px 18px;
+            background: #f1f5f9;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #0f2b4a;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+
+        .pagination a:hover {
+            background: #c53b2b;
+            color: white;
+        }
+
+        .pagination a.active {
+            background: #0f2b4a;
+            color: white;
+        }
+
+        /* --- МОДАЛЬНОЕ ОКНО (полностью как в index.html) --- */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: white;
+            border-radius: 24px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 95vh;
+            overflow-y: auto;
+            padding: 40px;
+            position: relative;
+            animation: modalSlide 0.4s ease;
+        }
+
+        @keyframes modalSlide {
+            from { opacity: 0; transform: translateY(40px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .modal-close {
+            position: sticky;
+            top: 0;
+            float: right;
+            background: #f1f5f9;
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .modal-close:hover {
+            background: #c53b2b;
+            color: white;
+        }
+
+        .modal .main-image {
+            width: 100%;
+            height: 350px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 16px;
+            margin-top: -10px;
+        }
+
+        .modal .project-title {
+            font-size: 2rem;
+            color: #0f2b4a;
+            margin: 20px 0 10px;
+        }
+
+        .modal .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 15px 0;
+            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 20px;
+        }
+
+        .modal .project-meta .tag {
+            background: #f1f5f9;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #0f2b4a;
+        }
+
+        .modal .project-meta .tag strong {
+            color: #c53b2b;
+        }
+
+        .modal .project-description {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .modal .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0 30px;
+        }
+
+        .modal .project-gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .modal .project-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 16px;
+            margin: 20px 0 30px;
+        }
+
+        .modal .project-features .feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+
+        .modal .project-features .feature .icon {
+            font-size: 1.3rem;
+        }
+
+        .modal .cta-section {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #c53b2b;
+            color: white;
+            box-shadow: 0 4px 15px rgba(197, 59, 43, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #a32f21;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(197, 59, 43, 0.4);
+        }
+
+        .btn-outline-dark {
+            border: 2px solid #c53b2b;
+            color: #c53b2b;
+            background: transparent;
+        }
+
+        .btn-outline-dark:hover {
+            background: #c53b2b;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* --- ПОДВАЛ --- */
+        .footer {
+            background-color: #0f2b4a;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9rem;
+        }
+
+        .footer a:hover {
+            color: #c53b2b;
+        }
+
+        .footer .copy {
+            margin-top: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* --- АДАПТИВНОСТЬ --- */
+        @media (max-width: 768px) {
+            .nav a {
+                margin-left: 15px;
+                font-size: 0.8rem;
+            }
+            .nav .contact-phone {
+                margin-left: 15px;
+                padding: 5px 15px;
+            }
+            .hero-mini h1 {
+                font-size: 2rem;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .modal {
+                padding: 20px;
+            }
+            .modal .main-image {
+                height: 220px;
+            }
+            .modal .project-title {
+                font-size: 1.5rem;
+            }
+            .modal .project-gallery {
+                grid-template-columns: 1fr;
+            }
+            .modal .project-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .modal .project-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-mini h1 {
+                font-size: 1.6rem;
+            }
+            .modal .main-image {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ШАПКА (такая же, как на главной) -->
+<header class="header">
+    <div class="container">
+        <div class="logo">Строй<span>Дом</span></div>
+        <nav class="nav">
+            <a href="index.html">Главная</a>
+            <a href="projects.html" style="color:#c53b2b;">Проекты</a>
+            <a href="index.html#prices">Цены</a>
+            <a href="index.html#contacts" class="contact-phone">+7 (843) 212-62-19</a>
+        </nav>
+    </div>
+</header>
+
+<!-- МИНИ-ГЕРОЙ -->
+<section class="hero-mini">
+    <div class="container">
+        <h1>Все проекты домов</h1>
+        <p>Более 100 реализованных объектов — от компактных таунхаусов до роскошных особняков</p>
+    </div>
+</section>
+
+<!-- ОСНОВНАЯ СЕТКА ПРОЕКТОВ -->
+<section class="projects-page">
+    <div class="container">
+        <p class="subtitle">Каждый проект уникален. Нажмите на карточку, чтобы увидеть детали.</p>
+
+        <div class="projects-grid" id="projectsGrid">
+            <!-- Проекты будут вставлены скриптом -->
+        </div>
+
+        <!-- Пагинация (для антуража отдельной страницы) -->
+        <div class="pagination">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">→</a>
+        </div>
+    </div>
+</section>
+
+<!-- МОДАЛЬНОЕ ОКНО (полностью как в index.html) -->
+<div class="modal-overlay" id="projectModal">
+    <div class="modal">
+        <button class="modal-close" id="modalClose">✕</button>
+
+        <div class="main-image" id="modalImage" style="background-image: url('');"></div>
+
+        <h2 class="project-title" id="modalTitle"></h2>
+
+        <div class="project-meta" id="modalMeta">
+            <span class="tag">📐 Площадь: <strong id="modalArea">—</strong></span>
+            <span class="tag">🧱 Материал: <strong id="modalMaterial">—</strong></span>
+            <span class="tag">🎨 Отделка: <strong id="modalFinish">—</strong></span>
+            <span class="tag">⏱️ Срок: <strong id="modalTime">—</strong></span>
+        </div>
+
+        <div class="project-description" id="modalDescription"></div>
+
+        <div class="project-gallery" id="modalGallery">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="Фото дома">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80" alt="Интерьер">
+            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=400&q=80" alt="Участок">
+        </div>
+
+        <div class="project-features" id="modalFeatures">
+            <div class="feature"><span class="icon">🏗️</span> Фундамент: <span id="featFoundation">—</span></div>
+            <div class="feature"><span class="icon">🧱</span> Стены: <span id="featWalls">—</span></div>
+            <div class="feature"><span class="icon">🏠</span> Перекрытия: <span id="featCeilings">—</span></div>
+            <div class="feature"><span class="icon">🪟</span> Окна: <span id="featWindows">—</span></div>
+            <div class="feature"><span class="icon">🔧</span> Инженерные сети: <span id="featUtilities">—</span></div>
+            <div class="feature"><span class="icon">📋</span> Гарантия: <span>5 лет</span></div>
+        </div>
+
+        <div class="cta-section">
+            <a href="index.html#contacts" class="btn btn-primary">📞 Заказать такой же дом</a>
+            <a href="#" class="btn btn-outline-dark">📥 Скачать презентацию</a>
+        </div>
+    </div>
+</div>
+
+<!-- ПОДВАЛ -->
+<footer class="footer">
+    <div class="container">
+        <div>
+            <a href="index.html#portfolio">Портфолио</a>
+            <a href="#">Отзывы</a>
+            <a href="#">Гарантии</a>
+            <a href="#">Блог</a>
+            <a href="index.html#contacts">Контакты</a>
+        </div>
+        <div class="copy">
+            © 2026 Строй Дом. Строительство домов под ключ в Казани.
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // === РАСШИРЕННАЯ БАЗА ПРОЕКТОВ (12 шт., чтобы выглядело как отдельная страница) ===
+        const allProjects = [
+            {
+                id: 1,
+                title: 'Дом в ЖК «Солнечный»',
+                image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
+                area: '145 м²',
+                material: 'Газобетон',
+                finish: 'Чистовая',
+                time: '5 месяцев',
+                description: 'Современный двухэтажный дом в жилом комплексе «Солнечный». Просторная терраса, панорамные окна и продуманная планировка. 4 спальни, большая кухня-столовая, камин.',
+                features: {
+                    foundation: 'Монолитная плита',
+                    walls: 'Газобетон D500 + утепление',
+                    ceilings: 'Монолитные ж/б',
+                    windows: 'Двухкамерные стеклопакеты (Rehau)',
+                    utilities: 'Автономное отопление, водоснабжение'
+                },
+                review: '«Приятно удивила чистота на стройке и соблюдение сроков»'
+            },
+            {
+                id: 2,
+                title: 'Коттедж в пос. Залесный',
+                image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80',
+                area: '98 м²',
+                material: 'Кирпич',
+                finish: 'Премиум',
+                time: '6 месяцев',
+                description: 'Уютный одноэтажный кирпичный дом в экологически чистом районе. Классический английский стиль, качественная отделка из натуральных материалов. 3 спальни, гостиная с выходом на террасу.',
+                features: {
+                    foundation: 'Ленточный глубокого заложения',
+                    walls: 'Кирпич керамический 2,5 кирпича',
+                    ceilings: 'Деревянные балки',
+                    windows: 'Деревянные евроокна',
+                    utilities: 'Газовое отопление, центральное водоснабжение'
+                },
+                review: '«Сделали даже лучше, чем мы представляли. Спасибо команде!»'
+            },
+            {
+                id: 3,
+                title: 'Дом с мансардой в СНТ «Березка»',
+                image: 'https://images.unsplash.com/photo-1600573472591-ee6981cf35b3?w=800&q=80',
+                area: '210 м²',
+                material: 'Дерево (брус)',
+                finish: 'Чистовая',
+                time: '7 месяцев',
+                description: 'Двухэтажный деревянный дом с просторной мансардой. Натуральный брус создаёт уникальный микроклимат. 5 спален, большой зал, сауна.',
+                features: {
+                    foundation: 'Винтовые сваи',
+                    walls: 'Профилированный брус 200x200',
+                    ceilings: 'Деревянные перекрытия',
+                    windows: 'Двухкамерные, деревянные',
+                    utilities: 'Автономное газовое отопление, септик'
+                },
+                review: '«Всё прозрачно, вовремя, без доплат. Рекомендуем!»'
+            },
+            {
+                id: 4,
+                title: 'Скандинавский дом в «Зелёной долине»',
+                image: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80',
+                area: '132 м²',
+                material: 'Каркас',
+                finish: 'Чистовая',
+                time: '4 месяца',
+                description: 'Стильный скандинавский дом по финской технологии. Быстровозводимый каркасный дом с большими панорамными окнами. Терраса по всему периметру. 3 спальни, кухня-гостиная, кабинет.',
+                features: {
+                    foundation: 'Утеплённая шведская плита (УШП)',
+                    walls: 'Каркас 150x150, утепление 200 мм',
+                    ceilings: 'Деревянные фермы',
+                    windows: 'Трёхкамерные стеклопакеты',
+                    utilities: 'Электрическое отопление, водоснабжение'
+                },
+                review: '«Построили дом мечты! Отдельное спасибо за террасу»'
+            },
+            {
+                id: 5,
+                title: 'Дом с бассейном в коттеджном посёлке',
+                image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80',
+                area: '280 м²',
+                material: 'Кирпич',
+                finish: 'Премиум',
+                time: '10 месяцев',
+                description: 'Роскошный двухэтажный особняк с собственным бассейном и террасой. Классическая архитектура, качественные материалы. 6 спален, домашний кинотеатр, бассейн с подогревом.',
+                features: {
+                    foundation: 'Монолитная плита с цокольным этажом',
+                    walls: 'Кирпич облицовочный + газобетон',
+                    ceilings: 'Монолитные ж/б',
+                    windows: 'Алюминиевые с терморазрывом',
+                    utilities: 'Автономное газовое отопление, водоснабжение, бассейн'
+                },
+                review: '«Дом получился роскошным. Все пожелания учтены!»'
+            },
+            {
+                id: 6,
+                title: 'Таунхаус в центре Казани',
+                image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
+                area: '180 м²',
+                material: 'Газобетон',
+                finish: 'Чистовая',
+                time: '8 месяцев',
+                description: 'Современный таунхаус в центральном районе Казани. Удобная планировка, два уровня, небольшая придомовая территория. 4 спальни, просторная гостиная, 2 санузла, гардеробная.',
+                features: {
+                    foundation: 'Ленточный мелкого заложения',
+                    walls: 'Газобетон D600 + облицовочный кирпич',
+                    ceilings: 'Монолитные ж/б',
+                    windows: 'Двухкамерные стеклопакеты (Rehau)',
+                    utilities: 'Центральное отопление, водоснабжение, канализация'
+                },
+                review: '«Строили в стеснённых условиях, справились отлично»'
+            },
+            {
+                id: 7,
+                title: 'Дом в стиле шале в пос. Лесной',
+                image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
+                area: '165 м²',
+                material: 'Дерево (бревно)',
+                finish: 'Чистовая',
+                time: '8 месяцев',
+                description: 'Альпийский шале из оцилиндрованного бревна. Большая терраса, эркеры, мансарда. Экологичный и тёплый дом для круглогодичного проживания. 4 спальни, каминный зал.',
+                features: {
+                    foundation: 'Ленточный бутобетонный',
+                    walls: 'Оцилиндрованное бревно 240 мм',
+                    ceilings: 'Деревянные перекрытия',
+                    windows: 'Двухкамерные деревянные',
+                    utilities: 'Автономное газовое отопление'
+                },
+                review: '«Дом как из сказки! Очень тёплый и красивый»'
+            },
+            {
+                id: 8,
+                title: 'Минималистичный дом в «Ясной поляне»',
+                image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80',
+                area: '120 м²',
+                material: 'Кирпич + утеплитель',
+                finish: 'Чистовая',
+                time: '5 месяцев',
+                description: 'Лаконичный дом с плоской кровлей и большим остеклением. Идеален для современной семьи. 3 спальни, открытая кухня-гостиная, терраса.',
+                features: {
+                    foundation: 'Плита УШП',
+                    walls: 'Кирпич + пенополистирол',
+                    ceilings: 'Монолитная плита',
+                    windows: 'Панорамные стеклопакеты',
+                    utilities: 'Электрическое отопление, водоснабжение'
+                },
+                review: '«Минимализм и комфорт в каждой детали»'
+            },
+            {
+                id: 9,
+                title: 'Дом с гаражом в коттеджном посёлке',
+                image: 'https://images.unsplash.com/photo-1600573472591-ee6981cf35b3?w=800&q=80',
+                area: '230 м²',
+                material: 'Газобетон + кирпич',
+                finish: 'Премиум',
+                time: '9 месяцев',
+                description: 'Просторный дом с пристроенным гаражом на 2 машины. В доме 5 спален, большая гостиная с камином, сауна, тренажёрный зал.',
+                features: {
+                    foundation: 'Монолитная плита',
+                    walls: 'Газобетон D600 + облицовочный кирпич',
+                    ceilings: 'Монолитные ж/б',
+                    windows: 'Двухкамерные энергосберегающие',
+                    utilities: 'Автономное газовое отопление'
+                },
+                review: '«Всё продумано до мелочей. Очень удобный дом»'
+            },
+            {
+                id: 10,
+                title: 'Дом для большой семьи в «Золотых песках»',
+                image: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80',
+                area: '310 м²',
+                material: 'Кирпич керамический',
+                finish: 'Премиум',
+                time: '12 месяцев',
+                description: 'Трёхэтажный дом с подземным гаражом и бильярдной. 7 спален, два камина, зимний сад. Роскошный дом для большой семьи.',
+                features: {
+                    foundation: 'Монолитная плита с подвалом',
+                    walls: 'Керамический кирпич 380 мм',
+                    ceilings: 'Монолитные ж/б',
+                    windows: 'Алюминиевые с терморазрывом',
+                    utilities: 'Автономное газовое отопление, водоснабжение'
+                },
+                review: '«Дом превзошёл все ожидания! Огромное спасибо»'
+            },
+            {
+                id: 11,
+                title: 'Уютный таунхаус в «Речном»',
+                image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
+                area: '95 м²',
+                material: 'Пенобетон',
+                finish: 'Чистовая',
+                time: '4 месяца',
+                description: 'Компактный таунхаус с небольшим садом. Отличный вариант для молодой семьи. 2 спальни, кухня-гостиная, небольшой кабинет.',
+                features: {
+                    foundation: 'Ленточный мелкого заложения',
+                    walls: 'Пенобетон D600 + утепление',
+                    ceilings: 'Деревянные',
+                    windows: 'Двухкамерные стеклопакеты',
+                    utilities: 'Центральное отопление, водоснабжение'
+                },
+                review: '«Очень уютно и функционально. Спасибо!»'
+            },
+            {
+                id: 12,
+                title: 'Дом-студия в арт-квартале',
+                image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
+                area: '75 м²',
+                material: 'Каркас',
+                finish: 'Чистовая',
+                time: '3 месяца',
+                description: 'Стильный дом-студия с открытой планировкой. Большие окна, светлые тона. Идеален для творческой личности или пары.',
+                features: {
+                    foundation: 'Свайно-винтовой фундамент',
+                    walls: 'Каркас 100x100, утепление 150 мм',
+                    ceilings: 'Деревянные',
+                    windows: 'Панорамные стеклопакеты',
+                    utilities: 'Электрическое отопление, водоснабжение'
+                },
+                review: '«Красиво, современно и быстро построили»'
+            }
+        ];
+
+        // === ГЕНЕРАЦИЯ КАРТОЧЕК ===
+        const grid = document.getElementById('projectsGrid');
+
+        function renderProjects(projects) {
+            grid.innerHTML = projects.map(p => `
+                <div class="project-card" data-project-id="${p.id}">
+                    <div class="image" style="background-image: url('${p.image}');"></div>
+                    <div class="info">
+                        <h3>${p.title}</h3>
+                        <div class="details">${p.area} | ${p.material} | ${p.finish} | ${p.time}</div>
+                        <div class="review">${p.review}</div>
+                        <div class="actions">
+                            <a class="project-link" data-project-id="${p.id}">Смотреть проект →</a>
+                            <a href="#">🎥 Видео-обзор</a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        renderProjects(allProjects);
+
+        // === МОДАЛЬНОЕ ОКНО (работает как в index.html) ===
+        const modal = document.getElementById('projectModal');
+        const modalClose = document.getElementById('modalClose');
+
+        function openProject(projectId) {
+            const data = allProjects.find(p => p.id === projectId);
+            if (!data) return;
+
+            document.getElementById('modalImage').style.backgroundImage = `url('${data.image}')`;
+            document.getElementById('modalTitle').textContent = data.title;
+            document.getElementById('modalArea').textContent = data.area;
+            document.getElementById('modalMaterial').textContent = data.material;
+            document.getElementById('modalFinish').textContent = data.finish;
+            document.getElementById('modalTime').textContent = data.time;
+            document.getElementById('modalDescription').textContent = data.description;
+
+            document.getElementById('featFoundation').textContent = data.features.foundation;
+            document.getElementById('featWalls').textContent = data.features.walls;
+            document.getElementById('featCeilings').textContent = data.features.ceilings;
+            document.getElementById('featWindows').textContent = data.features.windows;
+            document.getElementById('featUtilities').textContent = data.features.utilities;
+
+            const gallery = document.getElementById('modalGallery');
+            const galleryImages = [
+                data.image,
+                'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80',
+                'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=400&q=80'
+            ];
+            gallery.innerHTML = galleryImages.map(img =>
+                `<img src="${img}" alt="Фото проекта ${data.title}">`
+            ).join('');
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        modalClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+        });
+
+        // Клик по карточке или по ссылке "Смотреть проект"
+        document.addEventListener('click', function(e) {
+            const card = e.target.closest('.project-card');
+            if (card && !e.target.closest('a')) {
+                const id = parseInt(card.dataset.projectId);
+                if (id) openProject(id);
+            }
+
+            const link = e.target.closest('.project-link');
+            if (link) {
+                e.preventDefault();
+                const id = parseInt(link.dataset.projectId);
+                if (id) openProject(id);
+            }
+        });
+
+        // === ПАГИНАЦИЯ (демо, просто переключает активный класс) ===
+        document.querySelectorAll('.pagination a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.pagination a').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                // В реальности тут можно подгружать проекты через AJAX, но для демо просто скролл вверх
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        console.log('📐 Страница проектов загружена. Всего проектов:', allProjects.length);
+    });
+</script>
+
+</body>
+</html>
