@@ -7,9 +7,591 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <!-- Стили (оставляем без изменений, они такие же, как в вашем файле) -->
     <style>
-        /* ... все стили из вашего файла ... */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a1a1a;
+            line-height: 1.6;
+            background-color: #f8fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0f2b4a;
+        }
+
+        .logo span {
+            color: #c53b2b;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #1a1a1a;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .nav a:hover {
+            color: #c53b2b;
+        }
+
+        .nav .contact-phone {
+            background-color: #0f2b4a;
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin-left: 30px;
+        }
+
+        .nav .contact-phone:hover {
+            background-color: #c53b2b;
+            color: white !important;
+        }
+
+        .breadcrumbs {
+            padding: 20px 0 10px 0;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .breadcrumbs a {
+            color: #c53b2b;
+            text-decoration: none;
+        }
+
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumbs span {
+            color: #555;
+        }
+
+        .project-page {
+            padding: 40px 0 80px 0;
+        }
+
+        .project-page .main-image {
+            width: 100%;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+
+        .project-page .title {
+            font-size: 2.8rem;
+            color: #0f2b4a;
+            margin-bottom: 15px;
+        }
+
+        .project-page .subtitle {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .project-page .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 25px;
+        }
+
+        .project-page .meta .tag {
+            background: #f1f5f9;
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #0f2b4a;
+        }
+
+        .project-page .meta .tag strong {
+            color: #c53b2b;
+        }
+
+        .project-page .description {
+            color: #444;
+            line-height: 1.9;
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+
+        .project-page .description p {
+            margin-bottom: 15px;
+        }
+
+        .project-page .description p:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-page .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 16px;
+            margin: 25px 0 35px;
+        }
+
+        .project-page .features-grid .feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+
+        .project-page .features-grid .feature .icon {
+            font-size: 1.4rem;
+        }
+
+        .project-page .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0 40px;
+        }
+
+        .project-page .gallery img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-page .gallery img:hover {
+            transform: scale(1.02);
+        }
+
+        /* ===== СПОСОБЫ ПОКУПКИ ===== */
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 25px 0 35px;
+        }
+
+        .payment-method {
+            background: #f8fafc;
+            padding: 18px 15px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            transition: border-color 0.3s ease;
+        }
+
+        .payment-method:hover {
+            border-color: #c53b2b;
+        }
+
+        .payment-method .icon {
+            font-size: 1.8rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .payment-method .label {
+            font-weight: 600;
+            color: #0f2b4a;
+            font-size: 0.95rem;
+        }
+
+        .payment-method .desc {
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        /* ===== КАЛЬКУЛЯТОР СТОИМОСТИ ===== */
+        .calculator-section {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e2e8f0;
+        }
+
+        .calculator-section h3 {
+            font-size: 1.8rem;
+            color: #0f2b4a;
+            margin-bottom: 10px;
+        }
+
+        .calculator-section .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .calc-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .calc-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #0f2b4a;
+            margin-bottom: 8px;
+        }
+
+        .calc-group select {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            transition: border-color 0.3s ease;
+            appearance: none;
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230f2b4a' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 18px center;
+        }
+
+        .calc-group select:focus {
+            outline: none;
+            border-color: #c53b2b;
+            box-shadow: 0 0 0 3px rgba(197, 59, 43, 0.1);
+        }
+
+        .calc-group select option {
+            padding: 8px;
+        }
+
+        .calc-result {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 25px 30px;
+            background: #0f2b4a;
+            border-radius: 16px;
+            color: white;
+        }
+
+        .calc-result .price-label {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .calc-result .price-value {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .calc-result .price-value span {
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.7;
+            margin-left: 5px;
+        }
+
+        .calc-result .btn {
+            background-color: #c53b2b;
+            color: white;
+            padding: 14px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .calc-result .btn:hover {
+            background-color: #a32f21;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(197, 59, 43, 0.4);
+        }
+
+        .calc-note {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        /* ===== КНОПКИ CTA ===== */
+        .project-page .cta-section {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 30px 0;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 14px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #c53b2b;
+            color: white;
+            box-shadow: 0 4px 15px rgba(197, 59, 43, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #a32f21;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(197, 59, 43, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #0f2b4a;
+            border: 2px solid #c53b2b;
+        }
+
+        .btn-secondary:hover {
+            background-color: #c53b2b;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline-dark {
+            border: 2px solid #c53b2b;
+            color: #c53b2b;
+            background: transparent;
+        }
+
+        .btn-outline-dark:hover {
+            background: #c53b2b;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .similar-projects {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .similar-projects h3 {
+            font-size: 1.8rem;
+            color: #0f2b4a;
+            margin-bottom: 30px;
+        }
+
+        .similar-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .similar-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .similar-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .similar-card .image {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .similar-card .info {
+            padding: 18px;
+        }
+
+        .similar-card .info h4 {
+            font-size: 1.1rem;
+            color: #0f2b4a;
+            margin-bottom: 5px;
+        }
+
+        .similar-card .info p {
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .callback-section {
+            background: #0f2b4a;
+            color: white;
+            padding: 60px 0;
+            margin-top: 60px;
+            border-radius: 20px;
+        }
+
+        .callback-section .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .callback-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .callback-section p {
+            opacity: 0.85;
+            font-size: 1.05rem;
+        }
+
+        .callback-section .form-group input {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 10px;
+            border: none;
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+
+        .callback-section .form-group .btn {
+            width: 100%;
+            text-align: center;
+            background: #c53b2b;
+            color: white;
+        }
+
+        .callback-section .form-group .btn:hover {
+            background: #a32f21;
+        }
+
+        .project-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .project-nav a {
+            color: #0f2b4a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .project-nav a:hover {
+            color: #c53b2b;
+        }
+
+        .footer {
+            background-color: #0f2b4a;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9rem;
+        }
+
+        .footer a:hover {
+            color: #c53b2b;
+        }
+
+        .footer .copy {
+            margin-top: 20px;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 992px) {
+            .project-page .main-image { height: 350px; }
+            .project-page .features-grid { grid-template-columns: 1fr; }
+            .project-page .gallery { grid-template-columns: 1fr 1fr; }
+            .similar-grid { grid-template-columns: 1fr 1fr; }
+            .callback-section .container { grid-template-columns: 1fr; }
+            .calc-row { grid-template-columns: 1fr; }
+            .calc-result { flex-direction: column; text-align: center; }
+            .calc-result .price-value { font-size: 2.2rem; }
+            .payment-methods { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .nav a { margin-left: 15px; font-size: 0.8rem; }
+            .nav .contact-phone { margin-left: 15px; padding: 5px 15px; }
+            .project-page .title { font-size: 2rem; }
+            .project-page .main-image { height: 250px; }
+            .project-page .gallery { grid-template-columns: 1fr; }
+            .project-page .gallery img { height: 180px; }
+            .similar-grid { grid-template-columns: 1fr; }
+            .project-nav { flex-direction: column; gap: 15px; align-items: center; }
+            .calculator-section { padding: 20px; }
+            .calc-result .price-value { font-size: 1.8rem; }
+            .payment-methods { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .project-page .title { font-size: 1.6rem; }
+            .project-page .main-image { height: 200px; }
+            .callback-section h2 { font-size: 1.6rem; }
+            .calculator-section h3 { font-size: 1.4rem; }
+            .calc-result .price-value { font-size: 1.5rem; }
+            .calc-result .btn { width: 100%; text-align: center; }
+            .payment-methods { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -33,13 +615,14 @@
 <section class="project-page">
     <div class="container">
 
-        <!-- ===== Главное изображение ===== -->
+        <!-- ===== ГЛАВНОЕ ИЗОБРАЖЕНИЕ ===== -->
         <div class="main-image" style="background-image: url('https://kazanstroy16.ru/cache/files/file_3bca2cf0bafffd2fc8f19029f247732a.webp');"></div>
 
-        <!-- ===== Заголовок и описание ===== -->
+        <!-- ===== ЗАГОЛОВОК ===== -->
         <h1 class="title">Проект «Приска»</h1>
         <p class="subtitle">Одноэтажный дом из профилированного бруса с террасой. Площадь 61.5 м², размеры 13×14 м.</p>
 
+        <!-- ===== МЕТА-ТЕГИ ===== -->
         <div class="meta">
             <span class="tag">📐 Площадь: <strong>61.5 м²</strong></span>
             <span class="tag">🧱 Материал: <strong>Профилированный брус</strong></span>
@@ -48,13 +631,14 @@
             <span class="tag">⭐ Рейтинг: <strong>4.8</strong></span>
         </div>
 
+        <!-- ===== ОПИСАНИЕ ===== -->
         <div class="description">
             <p>Проект "Приска" — прекрасный одноэтажный дом для постоянного жилья из профилированного бруса с террасой. Дом имеет площадь 61.5 кв.м. с размерами 13x14 метров.</p>
             <p>Компания Строй Дом осуществляет качественное строительство дома "Приска". Обращаем ваше внимание на то, что стоимость строительства напрямую зависит от комплектации и технологии строительства. Для предоставления подробной информации и консультирования, можно обратиться по номеру: <strong>+7 (843) 212-62-19</strong>.</p>
             <p><em>Проекты взяты из открытых источников.</em></p>
         </div>
 
-        <!-- ===== Характеристики ===== -->
+        <!-- ===== ХАРАКТЕРИСТИКИ ===== -->
         <div class="features-grid">
             <div class="feature"><span class="icon">🏗️</span> Фундамент: Ленточный или свайный (на выбор)</div>
             <div class="feature"><span class="icon">🧱</span> Стены: Профилированный брус 145×145 мм</div>
@@ -64,7 +648,7 @@
             <div class="feature"><span class="icon">📋</span> Гарантия: 5 лет</div>
         </div>
 
-        <!-- ===== Способы покупки ===== -->
+        <!-- ===== СПОСОБЫ ПОКУПКИ ===== -->
         <div class="payment-methods">
             <div class="payment-method">
                 <span class="icon">📊</span>
@@ -88,7 +672,7 @@
             </div>
         </div>
 
-        <!-- ===== Калькулятор стоимости ===== -->
+        <!-- ===== КАЛЬКУЛЯТОР СТОИМОСТИ ===== -->
         <div class="calculator-section">
             <h3>💰 Рассчитайте стоимость дома «Приска»</h3>
             <p class="subtitle">Выберите вариант исполнения, и мы покажем актуальную цену</p>
@@ -138,31 +722,30 @@
             <div class="calc-note">* Предложение не является публичной офертой. Стоимость является ориентировочной и приведена исключительно в информационных целях. Цена может меняться от географического расположения строящегося объекта и рыночных изменений цен на строительные материалы.</div>
         </div>
 
-        <!-- ===== ОБНОВЛЁННАЯ ГАЛЕРЕЯ С РЕАЛЬНЫМИ ФОТО ===== -->
+        <!-- ===== ГАЛЕРЕЯ С РЕАЛЬНЫМИ ФОТО ===== -->
         <div class="gallery">
             <img src="https://kazanstroy16.ru/cache/files/file_3bca2cf0bafffd2fc8f19029f247732a.webp" alt="Дом Приска — фасад">
             <img src="https://kazanstroy16.ru/cache/files/file_0c02646e690a7d03b5d2ff5c00a2fc8b.webp" alt="Дом Приска — вид сбоку">
             <img src="https://kazanstroy16.ru/cache/files/file_68750413a7d646d7b675b32107da8d43.webp" alt="Дом Приска — интерьер">
             <img src="https://kazanstroy16.ru/cache/files/file_6a906367923983a97f7567adf3abc3df.webp" alt="Дом Приска — терраса">
             <img src="https://kazanstroy16.ru/cache/files/file_87a0818ce4d4679d43fb2d6c876f0499.webp" alt="Дом Приска — спальня">
-            <!-- Замените следующее изображение на своё шестое фото, если оно есть -->
             <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Дом Приска — гостиная (пример)">
         </div>
 
-        <!-- ===== Кнопки действий ===== -->
+        <!-- ===== КНОПКИ CTA ===== -->
         <div class="cta-section">
             <a href="index.html#contacts" class="btn btn-primary">📞 Заказать дом «Приска»</a>
             <a href="#" class="btn btn-outline-dark">📥 Скачать презентацию (PDF)</a>
             <a href="#" class="btn btn-secondary">🎥 Видео-обзор</a>
         </div>
 
-        <!-- ===== Навигация ===== -->
+        <!-- ===== НАВИГАЦИЯ МЕЖДУ ПРОЕКТАМИ ===== -->
         <div class="project-nav">
             <a href="index.html#portfolio">← Назад к проектам</a>
             <a href="project2.html">Следующий проект →</a>
         </div>
 
-        <!-- ===== Похожие проекты ===== -->
+        <!-- ===== ПОХОЖИЕ ПРОЕКТЫ ===== -->
         <div class="similar-projects">
             <h3>Похожие проекты</h3>
             <div class="similar-grid">
@@ -192,7 +775,7 @@
     </div>
 </section>
 
-<!-- ===== Форма обратной связи ===== -->
+<!-- ===== ФОРМА ОБРАТНОЙ СВЯЗИ ===== -->
 <section class="callback-section">
     <div class="container">
         <div>
@@ -207,7 +790,7 @@
     </div>
 </section>
 
-<!-- ===== Подвал ===== -->
+<!-- ===== ПОДВАЛ ===== -->
 <footer class="footer">
     <div class="container">
         <div>
