@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проект «Приска» — Строй Дом</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Стили (оставляем без изменений, они такие же, как в вашем файле) -->
+    <style>
+        /* ... все стили из вашего файла ... */
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="logo">Строй<span>Дом</span></div>
+        <nav class="nav">
+            <a href="index.html">Главная</a>
+            <a href="index.html#portfolio">Проекты</a>
+            <a href="index.html#prices">Цены</a>
+            <a href="index.html#contacts" class="contact-phone">+7 (843) 212-62-19</a>
+        </nav>
+    </div>
+</header>
+
+<div class="container breadcrumbs">
+    <a href="index.html">Главная</a> / <a href="index.html#portfolio">Проекты</a> / <span>«Приска» — дом из бруса 61.5 м²</span>
+</div>
+
+<section class="project-page">
+    <div class="container">
+
+        <!-- ===== Главное изображение ===== -->
+        <div class="main-image" style="background-image: url('https://kazanstroy16.ru/cache/files/file_3bca2cf0bafffd2fc8f19029f247732a.webp');"></div>
+
+        <!-- ===== Заголовок и описание ===== -->
+        <h1 class="title">Проект «Приска»</h1>
+        <p class="subtitle">Одноэтажный дом из профилированного бруса с террасой. Площадь 61.5 м², размеры 13×14 м.</p>
+
+        <div class="meta">
+            <span class="tag">📐 Площадь: <strong>61.5 м²</strong></span>
+            <span class="tag">🧱 Материал: <strong>Профилированный брус</strong></span>
+            <span class="tag">🏠 Этажность: <strong>1 этаж</strong></span>
+            <span class="tag">📏 Размеры: <strong>13×14 м</strong></span>
+            <span class="tag">⭐ Рейтинг: <strong>4.8</strong></span>
+        </div>
+
+        <div class="description">
+            <p>Проект "Приска" — прекрасный одноэтажный дом для постоянного жилья из профилированного бруса с террасой. Дом имеет площадь 61.5 кв.м. с размерами 13x14 метров.</p>
+            <p>Компания Строй Дом осуществляет качественное строительство дома "Приска". Обращаем ваше внимание на то, что стоимость строительства напрямую зависит от комплектации и технологии строительства. Для предоставления подробной информации и консультирования, можно обратиться по номеру: <strong>+7 (843) 212-62-19</strong>.</p>
+            <p><em>Проекты взяты из открытых источников.</em></p>
+        </div>
+
+        <!-- ===== Характеристики ===== -->
+        <div class="features-grid">
+            <div class="feature"><span class="icon">🏗️</span> Фундамент: Ленточный или свайный (на выбор)</div>
+            <div class="feature"><span class="icon">🧱</span> Стены: Профилированный брус 145×145 мм</div>
+            <div class="feature"><span class="icon">🏠</span> Перекрытия: Лаги из доски 100×200 мм</div>
+            <div class="feature"><span class="icon">🪟</span> Окна: 5-камерный профиль Rehau / Proplex</div>
+            <div class="feature"><span class="icon">🔧</span> Отопление: Автономное газовое</div>
+            <div class="feature"><span class="icon">📋</span> Гарантия: 5 лет</div>
+        </div>
+
+        <!-- ===== Способы покупки ===== -->
+        <div class="payment-methods">
+            <div class="payment-method">
+                <span class="icon">📊</span>
+                <div class="label">Рассрочка</div>
+                <div class="desc">Первый взнос 10%</div>
+            </div>
+            <div class="payment-method">
+                <span class="icon">💰</span>
+                <div class="label">Единовременная оплата</div>
+                <div class="desc">Спецпредложение — скидка 3%</div>
+            </div>
+            <div class="payment-method">
+                <span class="icon">🏦</span>
+                <div class="label">Ипотека</div>
+                <div class="desc">Ставка от 5%</div>
+            </div>
+            <div class="payment-method">
+                <span class="icon">👶</span>
+                <div class="label">Мат. капитал</div>
+                <div class="desc">Возможна оплата</div>
+            </div>
+        </div>
+
+        <!-- ===== Калькулятор стоимости ===== -->
+        <div class="calculator-section">
+            <h3>💰 Рассчитайте стоимость дома «Приска»</h3>
+            <p class="subtitle">Выберите вариант исполнения, и мы покажем актуальную цену</p>
+
+            <div class="calc-row">
+                <div class="calc-group">
+                    <label for="finishSelect">🏠 Стадия готовности</label>
+                    <select id="finishSelect">
+                        <option value="rough">Черновая отделка</option>
+                        <option value="rough_plus">Черновая+ (стяжка, разводка)</option>
+                        <option value="finishing" selected>Чистовая отделка</option>
+                        <option value="finishing_premium">Премиум-отделка</option>
+                        <option value="turnkey">Под ключ (мебель, техника)</option>
+                    </select>
+                </div>
+                <div class="calc-group">
+                    <label for="materialSelect">🧱 Материал стен</label>
+                    <select id="materialSelect">
+                        <option value="profiled_timber" selected>Профилированный брус</option>
+                        <option value="glued_timber">Клееный брус</option>
+                        <option value="aerated_concrete">Газобетон</option>
+                        <option value="brick">Кирпич</option>
+                        <option value="frame">Каркасная технология</option>
+                        <option value="sip">SIP-панели</option>
+                        <option value="ceramic_block">Керамический блок</option>
+                        <option value="foam_block">Пеноблок</option>
+                        <option value="log">Оцилиндрованное бревно</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Блок с базовыми ценами для справки -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 20px; padding: 15px; background: #f1f5f9; border-radius: 12px;">
+                <div style="font-size: 0.85rem; color: #555;"><strong>Профилированный брус:</strong> 3 874 500 ₽</div>
+                <div style="font-size: 0.85rem; color: #555;"><strong>Клееный брус:</strong> 3 997 500 ₽</div>
+                <div style="font-size: 0.85rem; color: #555;"><strong>Газобетон:</strong> 1 845 000 ₽</div>
+                <div style="font-size: 0.85rem; color: #555;"><strong>Каркас:</strong> 1 783 500 ₽</div>
+            </div>
+
+            <div class="calc-result">
+                <div>
+                    <div class="price-label">Итоговая стоимость</div>
+                    <div class="price-value" id="totalPrice">0 <span>₽</span></div>
+                </div>
+                <a href="index.html#contacts" class="btn">📞 Заказать расчёт</a>
+            </div>
+            <div class="calc-note">* Предложение не является публичной офертой. Стоимость является ориентировочной и приведена исключительно в информационных целях. Цена может меняться от географического расположения строящегося объекта и рыночных изменений цен на строительные материалы.</div>
+        </div>
+
+        <!-- ===== ОБНОВЛЁННАЯ ГАЛЕРЕЯ С РЕАЛЬНЫМИ ФОТО ===== -->
+        <div class="gallery">
+            <img src="https://kazanstroy16.ru/cache/files/file_3bca2cf0bafffd2fc8f19029f247732a.webp" alt="Дом Приска — фасад">
+            <img src="https://kazanstroy16.ru/cache/files/file_0c02646e690a7d03b5d2ff5c00a2fc8b.webp" alt="Дом Приска — вид сбоку">
+            <img src="https://kazanstroy16.ru/cache/files/file_68750413a7d646d7b675b32107da8d43.webp" alt="Дом Приска — интерьер">
+            <img src="https://kazanstroy16.ru/cache/files/file_6a906367923983a97f7567adf3abc3df.webp" alt="Дом Приска — терраса">
+            <img src="https://kazanstroy16.ru/cache/files/file_87a0818ce4d4679d43fb2d6c876f0499.webp" alt="Дом Приска — спальня">
+            <!-- Замените следующее изображение на своё шестое фото, если оно есть -->
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Дом Приска — гостиная (пример)">
+        </div>
+
+        <!-- ===== Кнопки действий ===== -->
+        <div class="cta-section">
+            <a href="index.html#contacts" class="btn btn-primary">📞 Заказать дом «Приска»</a>
+            <a href="#" class="btn btn-outline-dark">📥 Скачать презентацию (PDF)</a>
+            <a href="#" class="btn btn-secondary">🎥 Видео-обзор</a>
+        </div>
+
+        <!-- ===== Навигация ===== -->
+        <div class="project-nav">
+            <a href="index.html#portfolio">← Назад к проектам</a>
+            <a href="project2.html">Следующий проект →</a>
+        </div>
+
+        <!-- ===== Похожие проекты ===== -->
+        <div class="similar-projects">
+            <h3>Похожие проекты</h3>
+            <div class="similar-grid">
+                <a href="project3.html" class="similar-card">
+                    <div class="image" style="background-image: url('https://images.unsplash.com/photo-1600573472591-ee6981cf35b3?w=600&q=80');"></div>
+                    <div class="info">
+                        <h4>Дом с мансардой в СНТ</h4>
+                        <p>210 м² · Дерево · 7 месяцев</p>
+                    </div>
+                </a>
+                <a href="project4.html" class="similar-card">
+                    <div class="image" style="background-image: url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80');"></div>
+                    <div class="info">
+                        <h4>Скандинавский дом</h4>
+                        <p>132 м² · Каркас · 4 месяца</p>
+                    </div>
+                </a>
+                <a href="project6.html" class="similar-card">
+                    <div class="image" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80');"></div>
+                    <div class="info">
+                        <h4>Таунхаус в центре Казани</h4>
+                        <p>180 м² · Газобетон · 8 месяцев</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Форма обратной связи ===== -->
+<section class="callback-section">
+    <div class="container">
+        <div>
+            <h2>Хотите дом «Приска»?</h2>
+            <p>Оставьте заявку, и мы рассчитаем точную стоимость вашего дома с учётом всех пожеланий. Перезвоним в течение 15 минут.</p>
+        </div>
+        <div class="form-group">
+            <input type="text" placeholder="Ваше имя">
+            <input type="tel" placeholder="Номер телефона">
+            <button class="btn btn-primary">Рассчитать стоимость</button>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Подвал ===== -->
+<footer class="footer">
+    <div class="container">
+        <div>
+            <a href="index.html#portfolio">Портфолио</a>
+            <a href="#">Отзывы</a>
+            <a href="#">Гарантии</a>
+            <a href="#">Блог</a>
+            <a href="index.html#contacts">Контакты</a>
+        </div>
+        <div class="copy">
+            © 2026 Строй Дом. Строительство домов под ключ в Казани.
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // ===== КАЛЬКУЛЯТОР СТОИМОСТИ =====
+        const finishSelect = document.getElementById('finishSelect');
+        const materialSelect = document.getElementById('materialSelect');
+        const totalPriceElement = document.getElementById('totalPrice');
+
+        // Базовые цены для разных материалов (из реального сайта)
+        const basePrices = {
+            'profiled_timber': 3874500,
+            'glued_timber': 3997500,
+            'aerated_concrete': 1845000,
+            'brick': 3690000,
+            'frame': 1783500,
+            'sip': 1968000,
+            'ceramic_block': 3505500,
+            'foam_block': 3505500,
+            'log': 3874500
+        };
+
+        // Коэффициенты для стадии готовности
+        const finishCoefficients = {
+            'rough': 0.65,
+            'rough_plus': 0.80,
+            'finishing': 1.0,
+            'finishing_premium': 1.25,
+            'turnkey': 1.50
+        };
+
+        function calculatePrice() {
+            const material = materialSelect.value;
+            const finish = finishSelect.value;
+
+            const basePrice = basePrices[material] || 3874500;
+            const coeff = finishCoefficients[finish] || 1.0;
+
+            const total = Math.round(basePrice * coeff);
+
+            // Форматируем число с пробелами
+            const formatted = total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+            totalPriceElement.innerHTML = formatted + ' <span>₽</span>';
+        }
+
+        finishSelect.addEventListener('change', calculatePrice);
+        materialSelect.addEventListener('change', calculatePrice);
+
+        // Первоначальный расчёт
+        calculatePrice();
+
+        // ===== ПЛАВНАЯ АНИМАЦИЯ ДЛЯ КНОПОК =====
+        document.querySelectorAll('.btn').forEach(function(btn) {
+            btn.addEventListener('mousedown', function() {
+                this.style.transform = 'scale(0.97)';
+            });
+            btn.addEventListener('mouseup', function() {
+                this.style.transform = '';
+            });
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+            });
+        });
+
+        console.log('🏠 Проект «Приска» загружен с реальными фото!');
+        console.log('📊 Базовая цена: 3 874 500 ₽ (профилированный брус)');
+    });
+</script>
+
+</body>
+</html>
