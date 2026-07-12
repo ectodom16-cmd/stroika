@@ -1,0 +1,57 @@
+const projectData = {
+    "id": "project6",
+    "title": "Таунхаус в центре Казани",
+    "breadcrumb": "Таунхаус в центре Казани",
+    "mainImage": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
+    "basePrice": 5600000,
+    "meta": [
+        { "icon": "📐", "label": "Площадь", "value": "180 м²" },
+        { "icon": "🧱", "label": "Материал", "value": "Газобетон" },
+        { "icon": "🎨", "label": "Отделка", "value": "Чистовая" },
+        { "icon": "⏱️", "label": "Срок", "value": "8 месяцев" },
+        { "icon": "⭐", "label": "Рейтинг", "value": "4.7" }
+    ],
+    "description": [
+        "Современный таунхаус в центральном районе Казани. Удобная планировка, два уровня, небольшая придомовая территория. Рядом — парк, школы, детские сады. Идеальный вариант для городской жизни с комфортом загородного дома.",
+        "4 спальни, просторная гостиная, 2 санузла, гардеробная, кухня-столовая. Отличная транспортная доступность и развитая инфраструктура."
+    ],
+    "features": [
+        { "icon": "🏗️", "text": "Фундамент: Ленточный мелкого заложения" },
+        { "icon": "🧱", "text": "Стены: Газобетон D600 + облицовочный кирпич" },
+        { "icon": "🏠", "text": "Перекрытия: Монолитные ж/б" },
+        { "icon": "🪟", "text": "Окна: Двухкамерные стеклопакеты (Rehau)" },
+        { "icon": "🔧", "text": "Отопление: Центральное, водоснабжение" },
+        { "icon": "📋", "text": "Гарантия: 5 лет" }
+    ],
+    "finishOptions": [
+        { "value": "rough", "label": "Черновая отделка", "coefficient": 0.7 },
+        { "value": "rough_plus", "label": "Черновая+ (стяжка, разводка)", "coefficient": 0.85 },
+        { "value": "finishing", "label": "Чистовая отделка", "coefficient": 1.0 },
+        { "value": "finishing_premium", "label": "Премиум-отделка", "coefficient": 1.25 },
+        { "value": "turnkey", "label": "Под ключ (мебель, техника)", "coefficient": 1.5 }
+    ],
+    "materialOptions": [
+        { "value": "aerated_concrete", "label": "Газобетон", "coefficient": 1.0 },
+        { "value": "brick", "label": "Керамический кирпич", "coefficient": 1.15 },
+        { "value": "wood", "label": "Профилированный брус", "coefficient": 1.1 },
+        { "value": "galvanized_log", "label": "Бревно оцинкованное", "coefficient": 1.25 },
+        { "value": "sip", "label": "SIP-панель", "coefficient": 0.9 },
+        { "value": "frame", "label": "Каркасная технология", "coefficient": 0.85 },
+        { "value": "monolith", "label": "Монолитный бетон", "coefficient": 1.3 }
+    ],
+    "gallery": [
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80",
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80",
+        "https://images.unsplash.com/photo-1600573472591-ee6981cf35b3?w=600&q=80",
+        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80",
+        "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80",
+        "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80"
+    ],
+    "navPrev": { "url": "project5.html", "label": "← Предыдущий проект" },
+    "navNext": { "url": "index.html#portfolio", "label": "Назад к проектам →" },
+    "similar": [
+        { "url": "project1.html", "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80", "title": "Дом в ЖК «Солнечный»", "info": "145 м² · Газобетон · 5 месяцев" },
+        { "url": "project4.html", "image": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80", "title": "Скандинавский дом в «Зелёной долине»", "info": "132 м² · Каркас · 4 месяца" },
+        { "url": "project2.html", "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80", "title": "Коттедж в пос. Залесный", "info": "98 м² · Кирпич · 6 месяцев" }
+    ]
+};
